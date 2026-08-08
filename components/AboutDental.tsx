@@ -14,7 +14,7 @@ export default function AboutDental() {
   const { openModal } = useBookingModal();
 
   return (
-    <section className="about-dental" id="about">
+    <section id="doctor" className="about-dental">
       <div className="about-dental__inner">
         <div
           className="about-dental__photos"

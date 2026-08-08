@@ -17,7 +17,14 @@ const cormorant = Cormorant_Garamond({
   display: "swap",
 });
 
-const NAV_LINKS = ["Home", "About", "Treatments", "Gallery", "Blog", "Contact"];
+const NAV_LINKS = [
+  { label: "Home", href: "/" },
+  { label: "Doctor", href: "#doctor" },
+  { label: "Why Choose Us", href: "#why-choose-us" },
+  { label: "How We Treat", href: "#how-we-treat" },
+  { label: "Journey", href: "#journey" },
+  { label: "FAQ", href: "#faq" },
+];
 const TREATMENTS = [
   "Acne",
   "Acne Scars",
@@ -33,11 +40,11 @@ export default function CarewellHero() {
   const { openModal } = useBookingModal();
 
   return (
-    <div className={`${inter.className} bg-[#f7f5f1]`}>
+    <div id="top" className={`${inter.className} bg-[#f7f5f1]`}>
       {/* NAV */}
       <nav className="relative flex items-center justify-between gap-6 bg-[#f7f5f1] px-6 py-4 lg:px-28">
         <a
-          href="#"
+          href="#top"
           aria-label="Carewell Clinic and Academy"
           className="flex shrink-0 items-center"
         >
@@ -51,12 +58,12 @@ export default function CarewellHero() {
 
         <ul className="hidden list-none items-center gap-1 rounded-full border border-[#c6a03b]/25 bg-white p-1.5 lg:flex">
           {NAV_LINKS.map((l) => (
-            <li key={l}>
+            <li key={l.label}>
               <a
                 className="inline-block rounded-full bg-[#c6a03b]/10 px-4 py-2 text-[13px] font-medium tracking-[0.03em] text-[#171717] no-underline transition-colors duration-200 hover:bg-[#c6a03b] hover:text-white"
-                href="#"
+                href={l.href}
               >
-                {l}
+                {l.label}
               </a>
             </li>
           ))}
@@ -89,13 +96,13 @@ export default function CarewellHero() {
           <div className="absolute inset-x-0 top-full z-30 border-t border-[#c6a03b]/20 bg-[#f7f5f1] px-6 py-5 shadow-[0_20px_40px_-20px_rgba(23,23,23,0.3)] lg:hidden">
             <ul className="flex flex-col gap-1">
               {NAV_LINKS.map((l) => (
-                <li key={l}>
+                <li key={l.label}>
                   <a
-                    href="#"
+                    href={l.href}
                     onClick={() => setMenuOpen(false)}
                     className="block rounded-full px-4 py-2.5 text-[14px] font-medium text-[#171717] transition-colors duration-200 hover:bg-[#c6a03b]/10"
                   >
-                    {l}
+                    {l.label}
                   </a>
                 </li>
               ))}

@@ -107,7 +107,7 @@ export default function RootCanalJourney() {
   };
 
   return (
-    <section className="relative w-full overflow-hidden bg-white py-10 [font-family:'Inter',sans-serif] sm:py-12" id="root-canal-journey">
+    <section id="how-we-treat" className="relative w-full overflow-hidden bg-white py-10 [font-family:'Inter',sans-serif] sm:py-12">
       <div className="pointer-events-none absolute -right-24 -top-32 h-[420px] w-[420px] rounded-full bg-[#c6a03b]/[0.10] blur-3xl" />
       <div className="pointer-events-none absolute -bottom-28 -left-16 h-[360px] w-[360px] rounded-full bg-[#dd7900]/[0.08] blur-3xl" />
 

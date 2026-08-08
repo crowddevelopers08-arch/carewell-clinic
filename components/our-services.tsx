@@ -37,7 +37,7 @@ function ReasonCard({
   desc: string;
 }) {
   return (
-    <div
+    <div id="why-choose-us"
       className="group relative h-full rounded-3xl bg-white overflow-hidden isolate"
       style={{
         boxShadow: "0 20px 40px -18px rgba(23,23,23,0.18)",
