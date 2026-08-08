@@ -37,7 +37,7 @@ function ReasonCard({
   desc: string;
 }) {
   return (
-    <div id="why-choose-us"
+    <div 
       className="group relative h-full rounded-3xl bg-white overflow-hidden isolate"
       style={{
         boxShadow: "0 20px 40px -18px rgba(23,23,23,0.18)",
@@ -88,7 +88,7 @@ export default function WhyChooseUs() {
   const { openModal } = useBookingModal();
 
   return (
-    <section className="relative bg-white py-6 lg:py-10 px-6 overflow-hidden [font-family:'Inter',sans-serif]">
+    <section id="why-choose-us" className="relative bg-white py-6 lg:py-10 px-6 overflow-hidden [font-family:'Inter',sans-serif]">
       <div className="pointer-events-none absolute -right-24 -top-32 h-[420px] w-[420px] rounded-full bg-[#c6a03b]/[0.10] blur-3xl" />
       <div className="pointer-events-none absolute -bottom-28 -left-16 h-[360px] w-[360px] rounded-full bg-[#dd7900]/[0.08] blur-3xl" />
 
