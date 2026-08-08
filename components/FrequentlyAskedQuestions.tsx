@@ -39,7 +39,7 @@ export default function FrequentlyAskedQuestions({
   const [openQuestion, setOpenQuestion] = useState<number | null>(null);
 
   return (
-    <section className="relative overflow-hidden bg-white px-4 py-14 [font-family:'Inter',sans-serif] sm:px-6 sm:py-20 lg:px-8">
+    <section className="relative overflow-hidden bg-white px-4 py-14 [font-family:'Inter',sans-serif] sm:px-6 sm:py-10 lg:px-8">
       <div className="pointer-events-none absolute -right-24 -top-32 h-[420px] w-[420px] rounded-full bg-[#c6a03b]/[0.10] blur-3xl" />
       <div className="pointer-events-none absolute -bottom-28 -left-16 h-[360px] w-[360px] rounded-full bg-[#dd7900]/[0.08] blur-3xl" />
       <div className="relative z-10 mx-auto max-w-7xl">

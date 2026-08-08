@@ -65,7 +65,7 @@ export default function CarewellHero() {
         <button
           type="button"
           onClick={openModal}
-          className="hidden shrink-0 items-center gap-3 rounded-full bg-[#171717] px-5 py-2 text-sm font-medium tracking-[0.03em] text-white transition-colors hover:bg-[#dd7900] lg:inline-flex"
+          className="hidden cursor-pointer shrink-0 items-center gap-3 rounded-full bg-[#171717] px-5 py-2 text-sm font-medium tracking-[0.03em] text-white transition-colors hover:bg-[#dd7900] lg:inline-flex"
         >
           Book Consultation
           <span className="inline-flex h-8 w-8 items-center justify-center rounded-full bg-white text-[#171717]">
@@ -106,7 +106,7 @@ export default function CarewellHero() {
                 setMenuOpen(false);
                 openModal();
               }}
-              className="mt-4 flex w-full items-center justify-center gap-3 rounded-full bg-[#171717] px-5 py-3 text-sm font-medium tracking-[0.03em] text-white transition-colors hover:bg-[#dd7900]"
+              className="mt-4 flex cursor-pointer w-full items-center justify-center gap-3 rounded-full bg-[#171717] px-5 py-3 text-sm font-medium tracking-[0.03em] text-white transition-colors hover:bg-[#dd7900]"
             >
               Book Consultation
               <span className="inline-flex h-7 w-7 items-center justify-center rounded-full bg-white text-[#171717]">
@@ -247,7 +247,7 @@ export default function CarewellHero() {
             <button
               type="button"
               onClick={openModal}
-              className="inline-flex items-center gap-3 rounded-full bg-[#dd7900] px-5 py-2 text-sm font-medium tracking-[0.03em] text-white transition-colors hover:bg-[#171717]"
+              className="inline-flex cursor-pointer items-center gap-3 rounded-full bg-[#dd7900] px-5 py-2 text-sm font-medium tracking-[0.03em] text-white transition-colors hover:bg-[#171717]"
             >
               Book Consultation
               <span className="inline-flex h-8 w-8 items-center justify-center rounded-full bg-white text-[#171717]">

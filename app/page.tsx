@@ -9,6 +9,7 @@ import FaqSection from "@/components/FaqSection";
 import FrequentlyAskedQuestions from "@/components/FrequentlyAskedQuestions";
 import ContactMapSection from "@/components/ContactMapSection";
 import Footer from "@/components/Footer";
+import { MobileActionBar } from "@/components/MobileActionBar";
 
 export default function Home() {
 
@@ -24,6 +25,7 @@ export default function Home() {
   <FrequentlyAskedQuestions />
   <ContactMapSection />
   <Footer />
+  <MobileActionBar />
 
   </>
   );

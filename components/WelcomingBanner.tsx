@@ -46,7 +46,7 @@ export default function WelcomingBanner({ bgImage = "/hero-image.avif" }: Welcom
           <button
             type="button"
             onClick={openModal}
-            className="mt-8 inline-flex items-center gap-3 rounded-full bg-[#171717] px-4 py-2 pl-7 text-sm font-medium tracking-[0.03em] text-white transition-colors hover:bg-[#dd7900]"
+            className="mt-8 inline-flex items-center gap-3 rounded-full bg-[#dd7900] px-4 py-2 pl-7 text-sm font-medium tracking-[0.03em] text-white transition-colors hover:bg-[#171717] cursor-pointer"
           >
             Book Appointment
             <span className="inline-flex h-8 w-8 items-center justify-center rounded-full bg-white text-[#171717]">
@@ -61,7 +61,7 @@ export default function WelcomingBanner({ bgImage = "/hero-image.avif" }: Welcom
         type="button"
         aria-label="Scroll to top"
         onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}
-        className={`fixed bottom-6 right-6 z-50 flex h-11 w-11 items-center justify-center rounded-full bg-[#171717] text-white shadow-lg transition-all duration-300 hover:bg-[#dd7900] ${
+        className={`fixed bottom-6 max-sm:bottom-18 max-sm:right-4 right-6 z-50 flex h-11 w-11 items-center justify-center rounded-full bg-[#171717] text-white shadow-lg transition-all duration-300 hover:bg-[#dd7900] ${
           showTop ? "opacity-100" : "pointer-events-none opacity-0"
         }`}
       >

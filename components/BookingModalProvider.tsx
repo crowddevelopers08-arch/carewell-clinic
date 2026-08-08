@@ -28,13 +28,21 @@ const TREATMENT_OPTIONS = [
   "Other",
 ];
 
+// If your API route lives somewhere else (e.g. app/api/submissions/route.ts
+// instead of app/api/book-consultation/route.ts), just update this constant.
+const BOOKING_API_URL = "/api/submissions";
+
 export default function BookingModalProvider({ children }: { children: React.ReactNode }) {
   const [isOpen, setIsOpen] = useState(false);
   const [submitting, setSubmitting] = useState(false);
+  const [error, setError] = useState<string | null>(null);
   const router = useRouter();
 
   const openModal = useCallback(() => setIsOpen(true), []);
-  const closeModal = useCallback(() => setIsOpen(false), []);
+  const closeModal = useCallback(() => {
+    setIsOpen(false);
+    setError(null);
+  }, []);
 
   useEffect(() => {
     if (!isOpen) return;
@@ -49,14 +57,48 @@ export default function BookingModalProvider({ children }: { children: React.Rea
     };
   }, [isOpen, closeModal]);
 
-  const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
+  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
+    setError(null);
+
+    // Only the fields that exist in this form are read and sent — nothing else.
     const formData = new FormData(e.currentTarget);
     const name = String(formData.get("name") || "").trim();
+    const phone = String(formData.get("phone") || "").trim();
+    const treatment = String(formData.get("treatment") || "").trim();
 
     setSubmitting(true);
-    closeModal();
-    router.push(`/thank-you${name ? `?name=${encodeURIComponent(name)}` : ""}`);
+
+    try {
+      const res = await fetch(BOOKING_API_URL, {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({
+          source: "Consultation Modal",
+          name,
+          phone,
+          concern: treatment,
+          pageUrl: typeof window !== "undefined" ? window.location.href : "",
+          rating: "",
+          callback: "",
+        }),
+      });
+
+      const data = await res.json().catch(() => ({}));
+
+      if (!res.ok || data?.success === false) {
+        throw new Error(data?.error || "Something went wrong. Please try again.");
+      }
+
+      closeModal();
+      router.push(`/thank-you${name ? `?name=${encodeURIComponent(name)}` : ""}`);
+    } catch (err) {
+      setError(
+        err instanceof Error ? err.message : "Something went wrong. Please try again."
+      );
+    } finally {
+      setSubmitting(false);
+    }
   };
 
   return (
@@ -130,6 +172,7 @@ export default function BookingModalProvider({ children }: { children: React.Rea
                 <select
                   id="booking-treatment"
                   name="treatment"
+                  required
                   defaultValue=""
                   className="w-full rounded-xl border border-[#171717]/15 bg-white px-4 py-2.5 text-[14px] text-[#171717] outline-none transition-colors focus:border-[#c6a03b]"
                 >
@@ -144,10 +187,16 @@ export default function BookingModalProvider({ children }: { children: React.Rea
                 </select>
               </div>
 
+              {error && (
+                <p className="text-[12.5px] text-red-600" role="alert">
+                  {error}
+                </p>
+              )}
+
               <button
                 type="submit"
                 disabled={submitting}
-                className="mt-2 inline-flex items-center justify-center gap-3 rounded-full bg-[#171717] px-4 py-2 pl-7 text-sm font-medium tracking-[0.03em] text-white transition-colors hover:bg-[#dd7900] disabled:opacity-60"
+                className="mt-2 inline-flex items-center justify-center gap-3 rounded-full bg-[#171717] px-4 py-2 pl-7 text-sm font-medium tracking-[0.03em] text-white transition-colors hover:bg-[#dd7900] disabled:cursor-not-allowed disabled:opacity-60"
               >
                 {submitting ? "Submitting..." : "Book Appointment"}
                 <span className="inline-flex h-8 w-8 items-center justify-center rounded-full bg-white text-[#171717]">

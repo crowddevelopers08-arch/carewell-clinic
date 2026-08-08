@@ -22,7 +22,7 @@ export default function AboutDental() {
         >
           <div className="about-dental__photo about-dental__photo--a">
             <img
-              src="/doctor3.avif"
+              src="/doctors.avif"
               alt="Dr Dinesh K. Manjrekar performing a facial skin treatment"
               className="w-full object-cover object-center h-full"
             />
@@ -98,7 +98,7 @@ export default function AboutDental() {
             ))}
           </ul>
 
-          <button type="button" onClick={openModal} className="about-dental__button">
+          <button type="button" onClick={openModal} className="about-dental__button cursor-pointer">
             Book Consultation
             <span className="about-dental__button-icon">
               <ArrowUpRight size={16} strokeWidth={2.5} />
@@ -108,8 +108,8 @@ export default function AboutDental() {
       </div>
 
       <style>{`
-        .about-dental { position: relative; overflow: hidden; background: #fff; padding: 134px 50px 34px; color: #171717; font-family: 'Inter', sans-serif; }
-        .about-dental__inner { display: grid; grid-template-columns: 790px minmax(0, 1fr); grid-template-areas: "photos top" "photos bottom"; gap: 56px; align-items: start; max-width: 1650px; margin: 0 auto; }
+        .about-dental { position: relative; overflow: hidden; background: #fff; padding: 50px 50px 34px; color: #171717; font-family: 'Inter', sans-serif; }
+        .about-dental__inner { display: grid; grid-template-columns: 790px minmax(0, 1fr); grid-template-areas: "photos top" "photos bottom"; column-gap: 56px; row-gap: 8px; align-items: start; max-width: 1650px; margin: 0 auto; }
         .about-dental__photos { grid-area: photos; height: 640px; position: relative; }
         .about-dental__text--top { grid-area: top; }
         .about-dental__text--bottom { grid-area: bottom; }
@@ -140,7 +140,7 @@ export default function AboutDental() {
         .about-dental__envato b { color: #c6a03b; font-size: 19px; }
         .about-dental__to-top { align-items: center; background: #171717; border-radius: 50%; bottom: 24px; color: #fff; display: flex; font-size: 29px; font-weight: 700; height: 51px; justify-content: center; line-height: 1; position: absolute; right: 29px; text-decoration: none; width: 51px; transition: background .2s ease; }
         .about-dental__to-top:hover { background: #dd7900; }
-        @media (max-width: 1500px) { .about-dental__inner { grid-template-columns: 710px minmax(0, 1fr); gap: 45px; } .about-dental__photos { transform: scale(.9); transform-origin: top left; width: 878px; } .about-dental__eyebrow { font-size: 13px; } .about-dental__text--top > p { font-size: 15px; line-height: 1.6; } .about-dental__benefits li { font-size: 15px; } }
+        @media (max-width: 1500px) { .about-dental__inner { grid-template-columns: 710px minmax(0, 1fr); column-gap: 45px; row-gap: 8px; } .about-dental__photos { transform: scale(.9); transform-origin: top left; width: 878px; } .about-dental__eyebrow { font-size: 13px; } .about-dental__text--top > p { font-size: 15px; line-height: 1.6; } .about-dental__benefits li { font-size: 15px; } }
         @media (max-width: 1100px) { .about-dental { padding: 90px 35px 100px; } .about-dental__inner { grid-template-columns: 1fr; grid-template-areas: "top" "photos" "bottom"; gap: 24px; max-width: 790px; } .about-dental__photos { margin: 0 auto; } .about-dental__text { max-width: 790px; } }
         @media (max-width: 650px) { .about-dental { padding: 20px 20px 20px; } .about-dental__photos { height: auto; aspect-ratio: 790 / 640; transform: none; width: 100%; position: relative; } .about-dental__photo--a, .about-dental__photo--b, .about-dental__photo--c { position: absolute; height: auto; } .about-dental__photo--a { left: 11.4%; top: 0; width: 38%; aspect-ratio: 300 / 260; } .about-dental__photo--b { left: 0; top: 46.9%; width: 48.1%; aspect-ratio: 380 / 340; } .about-dental__photo--c { left: 51.9%; top: 4.7%; width: 48.1%; aspect-ratio: 380 / 580; } .about-dental__eyebrow { font-size: 12px; margin: 13px 0 18px; } .about-dental__heading { font-size: 32px; } .about-dental__text--top > p { font-size: 14px; line-height: 1.6; margin: 20px 0 24px; } .about-dental__benefits { gap: 13px; margin-bottom: 30px; } .about-dental__benefits li { font-size: 14px; } .about-dental__envato { bottom: 23px; left: 20px; font-size: 13px; padding: 10px 16px; } .about-dental__to-top { bottom: 20px; right: 20px; width: 46px; height: 46px; } }
       `}</style>

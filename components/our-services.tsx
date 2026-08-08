@@ -147,7 +147,7 @@ export default function WhyChooseUs() {
         <button
           type="button"
           onClick={openModal}
-          className="inline-flex items-center gap-3 bg-[#171717] hover:bg-[#dd7900] transition-colors text-white text-sm font-medium tracking-[0.03em] px-7 py-3 rounded-full"
+          className="inline-flex cursor-pointer items-center gap-3 bg-[#171717] hover:bg-[#dd7900] transition-colors text-white text-sm font-medium tracking-[0.03em] px-7 py-3 rounded-full"
         >
           Book Consultation
           <span className="inline-flex items-center justify-center w-8 h-8 rounded-full bg-white text-[#171717]">

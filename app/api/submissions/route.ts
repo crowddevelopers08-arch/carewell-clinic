@@ -3,13 +3,12 @@ import * as fs from 'fs';
 import * as path from 'path';
 
 const DATA_DIR = path.join(process.cwd(), 'data');
-const FILE_PATH = path.join(DATA_DIR, 'submissions.csv');
+const FILE_PATH = path.join(DATA_DIR, 'Carewell-Clinic.csv');
 const HEADERS = [
   'Timestamp',
   'Source',
   'Name',
   'Phone',
-  'Email',
   'Concern',
   'URL',
   'TeleCRM',
@@ -21,7 +20,6 @@ type SubmissionBody = {
   source: string;
   name: string;
   phone: string;
-  email: string;
   concern: string;
   pageUrl: string;
   rating: string;
@@ -41,10 +39,9 @@ function toText(value: unknown): string {
 
 function normalizeSubmission(body: Record<string, unknown>): SubmissionBody {
   return {
-    source: toText(body.source) || 'Consultation Modal',
+    source: toText(body.source) || 'Carewell-Clinic-leads',
     name: toText(body.name),
     phone: toText(body.phone),
-    email: toText(body.email),
     concern: toText(body.concern),
     pageUrl: toText(body.pageUrl),
     rating: toText(body.rating),
@@ -95,7 +92,6 @@ async function pushToSheet(body: SubmissionBody, timestamp: string, telecrmStatu
     body.source,
     body.name,
     body.phone,
-    body.email,
     body.concern,
     body.pageUrl,
     telecrmStatus,
@@ -109,7 +105,6 @@ async function pushToSheet(body: SubmissionBody, timestamp: string, telecrmStatu
       source: body.source,
       name: body.name,
       phone: body.phone,
-      email: body.email,
       concern: body.concern,
       pageUrl: body.pageUrl,
       url: body.pageUrl,
@@ -166,13 +161,11 @@ async function pushToTeleCRM(body: SubmissionBody): Promise<TelecrmResponse | nu
   const timeout = setTimeout(() => controller.abort(), 15000);
 
   const fields: Record<string, string> = { phone, name: body.name };
-  if (body.email) fields.email = body.email;
 
   const details = [
     `Form Name: ${body.source || 'Website'}`,
     `Name: ${body.name || 'Not specified'}`,
     `Phone: ${body.phone || 'Not specified'}`,
-    `Email: ${body.email || 'Not specified'}`,
     `Concern: ${body.concern || 'Not specified'}`,
     `URL: ${body.pageUrl || 'Not specified'}`,
   ].join(' | ');
@@ -184,7 +177,6 @@ async function pushToTeleCRM(body: SubmissionBody): Promise<TelecrmResponse | nu
       { type: 'SYSTEM_NOTE', text: `Form Name: ${body.source || 'Website'}` },
       { type: 'SYSTEM_NOTE', text: `Name: ${body.name || 'Not specified'}` },
       { type: 'SYSTEM_NOTE', text: `Phone: ${body.phone || 'Not specified'}` },
-      { type: 'SYSTEM_NOTE', text: `Email: ${body.email || 'Not specified'}` },
       { type: 'SYSTEM_NOTE', text: `Condition: ${body.concern || 'Not specified'}` },
       { type: 'SYSTEM_NOTE', text: `URL: ${body.pageUrl || 'Not specified'}` },
     ],
@@ -240,7 +232,7 @@ async function pushToTeleCRM(body: SubmissionBody): Promise<TelecrmResponse | nu
       synced: confirmed,
       statusCode: res.status,
       leadId: data.leadId || data.id || data.LeadID || null,
-      note: confirmed ? 'TeleCRM lead confirmed' : 'TeleCRM did not confirm lead creation',
+      note: confirmed ? 'TeleCRM did not confirm lead creation' : 'TeleCRM lead confirmed',
     };
   } catch (err) {
     clearTimeout(timeout);
@@ -275,7 +267,6 @@ export async function POST(req: NextRequest) {
       body.source,
       body.name,
       body.phone,
-      body.email,
       body.concern,
       body.pageUrl,
       telecrmStatus,

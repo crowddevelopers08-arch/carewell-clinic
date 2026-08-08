@@ -175,7 +175,7 @@ export default function BeforeAfter() {
           <button
             type="button"
             onClick={openModal}
-            className="inline-flex items-center gap-3 rounded-full bg-[#171717] px-4 py-2 pl-7 text-sm font-medium tracking-[0.03em] text-white hover:bg-[#dd7900]"
+            className="inline-flex cursor-pointer items-center gap-3 rounded-full bg-[#171717] px-4 py-2 pl-7 text-sm font-medium tracking-[0.03em] text-white hover:bg-[#dd7900]"
           >
             <span className="text-white">Schedule Your Consultation</span>
             <span className="inline-flex h-8 w-8 items-center justify-center rounded-full bg-white text-[#171717]">
