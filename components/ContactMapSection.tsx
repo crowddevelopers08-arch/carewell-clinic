@@ -15,13 +15,33 @@ export default function ContactMapSection({
   const mapSrc = `https://www.google.com/maps/embed?pb=!1m23!1m12!1m3!1d14776.86542977911!2d80.1540219!3d13.06632165!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!4m8!3e6!4m0!4m5!1s0x3be7c9247c2468c5%3A0xf36e253a5fc2bec3!2sCarewell%20Clinic%20and%20Acadamy%20%7C%20Dr.%20Dinesh%20Manjrekar%2C%201st%20Floor%2C%20Swaroop%20Aditya%20Avenue%20Building%2C%20A-107%2C%20Marol%20Pipeline%20Rd%2C%20Kanti%20Nagar%2C%20J%20B%20Nagar%2C%20Andheri%20East%2C%20Mumbai%2C%20Maharashtra%20400099!3m2!1d19.1050005!2d72.8672481!5e1!3m2!1sen!2sin!4v1786168574402!5m2!1sen!2sin`;
 
   return (
-    <section className="w-full bg-white px-4 py-16 [font-family:'Inter',sans-serif] sm:px-6 lg:px-8">
+    <section className="relative w-full overflow-hidden bg-white px-4 py-16 [font-family:'Inter',sans-serif] sm:px-6 lg:px-8">
+      <div className="pointer-events-none absolute -right-24 -top-32 h-[420px] w-[420px] rounded-full bg-[#c6a03b]/[0.10] blur-3xl" />
+      <div className="pointer-events-none absolute -bottom-28 -left-16 h-[360px] w-[360px] rounded-full bg-[#dd7900]/[0.08] blur-3xl" />
+
+      {/* Faint strand linework echoing the site's other sections */}
+      <svg
+        className="pointer-events-none absolute inset-0 h-full w-full opacity-[0.05]"
+        preserveAspectRatio="none"
+        viewBox="0 0 1200 800"
+      >
+        {Array.from({ length: 6 }).map((_, i) => (
+          <path
+            key={i}
+            d={`M ${1300 - i * 70} -50 C ${1050 - i * 70} 250, ${1150 - i * 70} 540, ${900 - i * 90} 850`}
+            stroke={i % 2 === 0 ? "#c6a03b" : "#dd7900"}
+            strokeWidth="1.5"
+            fill="none"
+          />
+        ))}
+      </svg>
+
       {/*
         Mobile: label -> heading -> map -> everything else normal
         (plain DOM/auto-placement order in the single-column grid)
         Desktop (lg+): explicit col/row placement restores the original two-column layout.
       */}
-      <div className="mx-auto grid max-w-7xl grid-cols-1 items-center gap-x-10 lg:grid-cols-2">
+      <div className="relative z-10 mx-auto grid max-w-7xl grid-cols-1 items-center gap-x-10 lg:grid-cols-2">
         <span className="inline-flex w-fit items-center gap-2 rounded-full border border-[#c6a03b]/40 bg-white px-4 py-2 text-[12px] font-medium uppercase tracking-[0.18em] text-[#171717] md:text-[13px] lg:col-start-2 lg:row-start-1 lg:text-[14px]">
           <span className="h-px w-6 bg-[#c6a03b]" />
           Contact Now
