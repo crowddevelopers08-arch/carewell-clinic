@@ -32,15 +32,15 @@ const sections = [
   },
   {
     title: "Contact Us",
-    body: "If you have questions about this Privacy Policy or how your information is handled, reach out to us at info@domain.com or +(123) 698-5245.",
+    body: "If you have questions about this Privacy Policy or how your information is handled, reach out to us at carewellskinhairlaserclinic@gmail.com or +91 82919 32733.",
   },
 ];
 
 export default function PrivacyPolicyPage() {
   return (
-    <main className="w-full bg-white px-6 py-0 [font-family:'Inter',sans-serif] sm:px-10 lg:px-14">
+    <main className="w-full bg-white [font-family:'Inter',sans-serif]">
       {/* NAV */}
-      <nav className="flex items-center justify-around gap-4 px-6 py-4 mb-4 lg:px-22">
+      <nav className="flex items-center justify-around gap-4 border-b border-[#171717]/8 px-6 py-4 sm:px-10 lg:px-14">
         <Link
           href="/"
           aria-label="Carewell Clinic and Academy"
@@ -48,7 +48,7 @@ export default function PrivacyPolicyPage() {
         >
           {/* eslint-disable-next-line @next/next/no-img-element */}
           <img
-            className="h-14 w-auto mix-blend-multiply sm:h-30"
+            className="h-12 w-auto mix-blend-multiply sm:h-20"
             src="/logos.jpeg"
             alt="Carewell Clinic and Academy — Skin, Hair, Laser"
           />
@@ -65,49 +65,66 @@ export default function PrivacyPolicyPage() {
 
           <Link
             href="/"
-            className="inline-flex shrink-0 items-center gap-2 rounded-full bg-[#171717] px-4 py-3 text-[13px] font-medium tracking-[0.03em] !text-white hover:bg-[#dd7900] hover:!text-white"
+            className="inline-flex shrink-0 items-center gap-2 rounded-full bg-[#171717] px-4 py-2.5 text-[13px] font-medium tracking-[0.03em] !text-white transition-colors hover:bg-[#dd7900] hover:!text-white"
           >
             <ArrowLeft size={15} />
             Back to Home
           </Link>
         </div>
       </nav>
-      <div className="mx-auto max-w-3xl pb-10">
-        <Link
-          href="/"
-          className="text-[13px] font-medium uppercase tracking-[0.14em] text-[#c6a03b] transition-colors duration-200 hover:text-[#dd7900]"
-        >
-          ← Back to Home
-        </Link>
 
+      {/* CONTENT */}
+      <div className="mx-auto max-w-3xl px-6 py-14 sm:px-10 sm:py-16 lg:max-w-4xl lg:px-0 xl:max-w-5xl">
+        <div className="flex items-center gap-3">
+          <Link
+            href="/"
+            className="inline-flex items-center gap-1.5 text-[13px] font-medium uppercase tracking-[0.14em] text-[#c6a03b] transition-colors duration-200 hover:text-[#dd7900]"
+          >
+            ← Back to Home
+          </Link>
+
+          <span className=" inline-flex items-center gap-2 rounded-full border border-[#c6a03b]/40 bg-white px-4 py-2 text-[12px] font-medium uppercase tracking-[0.18em] text-[#171717]">
+            <span className="h-px w-6 bg-[#c6a03b]" />
+            Legal
+            <span className="h-px w-6 bg-[#dd7900]" />
+          </span>
+        </div>
         <h1 className="mt-4 [font-family:'Cormorant_Garamond',serif] text-[36px] font-semibold leading-tight text-[#171717] md:text-[46px]">
           Privacy <span className="italic text-[#c6a03b]">Policy</span>
         </h1>
-        <p className="mt-3 text-[14px] text-[#171717]/55">
+        <p className="mt-3 text-[13.5px] font-medium uppercase tracking-[0.1em] text-[#171717]/45">
           Last updated: August 7, 2026
         </p>
 
-        <p className="mt-8 text-[15px] leading-relaxed text-[#171717]/70">
+        <p className="mt-8 max-w-2xl text-[15.5px] leading-relaxed text-[#171717]/70">
           Carewell Clinic and Academy respects your privacy. This policy
           explains what information we collect, how we use it, and the choices
           you have.
         </p>
 
-        <div className="mt-10 flex flex-col gap-8">
-          {sections.map((s) => (
-            <div key={s.title}>
-              <h2 className="[font-family:'Cormorant_Garamond',serif] text-[22px] font-semibold text-[#171717]">
-                {s.title}
-              </h2>
-              <p className="mt-2 text-[15px] leading-relaxed text-[#171717]/70">
-                {s.body}
-              </p>
+        <div className="mt-12 grid grid-cols-1 gap-5 lg:grid-cols-2">
+          {sections.map((s, i) => (
+            <div
+              key={s.title}
+              className="flex gap-5 rounded-2xl border border-[#171717]/8 px-6 py-7 sm:px-8"
+            >
+              <span className="mt-1 flex h-8 w-8 shrink-0 items-center justify-center rounded-full bg-[#c6a03b]/10 text-[13px] font-semibold text-[#c6a03b]">
+                {String(i + 1).padStart(2, "0")}
+              </span>
+              <div>
+                <h2 className="[font-family:'Cormorant_Garamond',serif] text-[21px] font-semibold text-[#171717] md:text-[23px]">
+                  {s.title}
+                </h2>
+                <p className="mt-2 text-[15px] leading-relaxed text-[#171717]/70">
+                  {s.body}
+                </p>
+              </div>
             </div>
           ))}
         </div>
       </div>
-            <Footer />
-      
+
+      <Footer />
     </main>
   );
 }
