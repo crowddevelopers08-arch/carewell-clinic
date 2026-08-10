@@ -33,8 +33,8 @@ const questions = [
 ];
 
 export default function FrequentlyAskedQuestions({
-  imageSrc1 = "/faq1.avif",
-  imageSrc2 = "/faq2.avif",
+  imageSrc1 = "/carewell-image-6.jpg",
+  imageSrc2 = "/carewell-image-1.webp",
 }: FrequentlyAskedQuestionsProps) {
   const [openQuestion, setOpenQuestion] = useState<number | null>(null);
 
@@ -81,7 +81,7 @@ export default function FrequentlyAskedQuestions({
                 src={imageSrc1}
                 alt="Medical care team"
                 fill
-                className="object-cover object-left"
+                className="object-cover object-top"
                 sizes="(max-width: 640px) 60vw, (max-width: 1024px) 300px, 300px"
               />
             </div>
@@ -90,7 +90,7 @@ export default function FrequentlyAskedQuestions({
                 src={imageSrc2}
                 alt="Doctor providing care"
                 fill
-                className="object-cover object-right"
+                className="object-cover object-top"
                 sizes="(max-width: 640px) 52vw, (max-width: 1024px) 270px, 270px"
               />
             </div>

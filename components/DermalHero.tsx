@@ -137,7 +137,7 @@ export default function CarewellHero() {
         <div className="relative z-10 mx-auto grid max-w-7xl grid-cols-1 items-center gap-x-8 lg:grid-cols-[1fr_1.15fr]">
           <span className="hero-anim inline-flex w-fit items-center gap-1.5 whitespace-nowrap rounded-full border border-[#c6a03b]/40 bg-white px-3 py-1.5 text-[10px] font-medium uppercase tracking-[0.1em] text-[#171717] sm:gap-2 sm:px-4 sm:py-2 sm:text-[12px] sm:tracking-[0.18em] md:text-[13px] lg:col-start-1 lg:row-start-1 lg:mt-2">
             <span className="hidden h-px w-6 bg-[#c6a03b] sm:inline-block" />
-            Trusted by 10,000+ Patients
+            Trusted by 3,124+ Patients
             <span className="hidden h-px w-6 bg-[#dd7900] sm:inline-block" />
           </span>
 
@@ -211,7 +211,7 @@ export default function CarewellHero() {
                 {/* eslint-disable-next-line @next/next/no-img-element */}
                 <img
                   className="h-[230px] w-full object-cover object-top"
-                  src="/doctor1.avif"
+                  src="/carewell-image-5.png"
                   alt="Carewell Clinic patient care"
                 />
               </div>

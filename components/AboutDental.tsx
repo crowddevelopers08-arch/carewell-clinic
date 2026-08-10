@@ -35,7 +35,7 @@ export default function AboutDental() {
           </div>
           <div className="about-dental__photo about-dental__photo--c">
             <img
-              src="/doctor1.avif"
+              src="/carewell-image-3.webp"
               alt="Dr Dinesh K. Manjrekar consulting with a patient"
             />
           </div>
