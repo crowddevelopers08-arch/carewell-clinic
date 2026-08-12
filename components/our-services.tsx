@@ -6,22 +6,22 @@ import { useBookingModal } from "./BookingModalProvider";
 
 const reasons = [
   {
-    icon: "/icons1.png",
+    icon: "https://res.cloudinary.com/x6ec5hqm/image/upload/v1786551430/icons1.png",
     title: "Personalised Treatment Plans",
     desc: "Every skin type is unique. Your treatment is tailored to your individual concerns and goals.",
   },
   {
-    icon: "/icons2.png",
+    icon: "https://res.cloudinary.com/x6ec5hqm/image/upload/v1786551430/icons2.png",
     title: "Doctor-Led Care",
     desc: "Every procedure is planned and performed under the supervision of an experienced aesthetic doctor.",
   },
   {
-    icon: "/icons3.png",
+    icon: "https://res.cloudinary.com/x6ec5hqm/image/upload/v1786551430/icons3.png",
     title: "Advanced Technology",
     desc: "Modern aesthetic technologies designed to treat a wide range of skin concerns safely and effectively.",
   },
   {
-    icon: "/icons4.png",
+    icon: "https://res.cloudinary.com/x6ec5hqm/image/upload/v1786551430/icons4.png",
     title: "Continuous Follow-Up",
     desc: "We continue to support your progress through regular follow-ups and personalised guidance throughout your treatment journey.",
   },

@@ -18,7 +18,7 @@ const DEFAULT_STEPS: SkinConcern[] = [
     description:
       "Target active breakouts with personalised, doctor-led acne care for clearer-looking skin.",
     image:
-      "/we-treat1.png",
+      "https://res.cloudinary.com/x6ec5hqm/image/upload/v1786551436/we-treat1.png",
   },
   {
     id: 2,
@@ -26,7 +26,7 @@ const DEFAULT_STEPS: SkinConcern[] = [
     description:
       "Smooth the appearance of acne scars with treatments tailored to your skin and goals.",
     image:
-      "/we-treat2.png",
+      "https://res.cloudinary.com/x6ec5hqm/image/upload/v1786551442/we-treat2.png",
   },
   {
     id: 3,
@@ -34,7 +34,7 @@ const DEFAULT_STEPS: SkinConcern[] = [
     description:
       "Address dark spots and uneven pigmentation for a more balanced, radiant complexion.",
     image:
-      "/we-treat3.png",
+      "https://res.cloudinary.com/x6ec5hqm/image/upload/v1786551502/we-treat3.png",
   },
   {
     id: 4,
@@ -42,7 +42,7 @@ const DEFAULT_STEPS: SkinConcern[] = [
     description:
       "Restore a more even-looking tone with gentle treatments designed around your skin needs.",
     image:
-      "/we-treat4.png",
+      "https://res.cloudinary.com/x6ec5hqm/image/upload/v1786551502/we-treat4.png",
   },
   {
     id: 5,
@@ -50,7 +50,7 @@ const DEFAULT_STEPS: SkinConcern[] = [
     description:
       "Revive tired, lacklustre skin with hydration-focused treatments that boost natural glow.",
     image:
-      "/we-treat5.png",
+      "https://res.cloudinary.com/x6ec5hqm/image/upload/v1786551450/we-treat5.png",
   },
   {
     id: 6,
@@ -58,7 +58,7 @@ const DEFAULT_STEPS: SkinConcern[] = [
     description:
       "Soften the look of fine lines and wrinkles with refined, natural-looking rejuvenation.",
     image:
-      "/we-treat6.png",
+      "https://res.cloudinary.com/x6ec5hqm/image/upload/v1786551449/we-treat6.png",
   },
   {
     id: 7,
@@ -66,7 +66,7 @@ const DEFAULT_STEPS: SkinConcern[] = [
     description:
       "Refresh your complexion with personalised care that supports smoother, healthier-looking skin.",
     image:
-      "/we-treat7.png",
+      "https://res.cloudinary.com/x6ec5hqm/image/upload/v1786551503/we-treat7.png",
   },
   {
     id: 8,
@@ -74,7 +74,7 @@ const DEFAULT_STEPS: SkinConcern[] = [
     description:
       "Enjoy long-lasting smoothness with safe, effective laser hair-reduction sessions.",
     image:
-      "/we-treat8.png",
+      "https://res.cloudinary.com/x6ec5hqm/image/upload/v1786551504/we-treat8.png",
   },
 ];
 

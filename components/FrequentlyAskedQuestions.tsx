@@ -33,8 +33,8 @@ const questions = [
 ];
 
 export default function FrequentlyAskedQuestions({
-  imageSrc1 = "/carewell-image-6.jpg",
-  imageSrc2 = "/carewell-image-1.webp",
+  imageSrc1 = "https://res.cloudinary.com/x6ec5hqm/image/upload/a_-90/_DSC4625.jpg",
+  imageSrc2 = "https://res.cloudinary.com/x6ec5hqm/image/upload/v1786553627/_DSC4692.jpg",
 }: FrequentlyAskedQuestionsProps) {
   const [openQuestion, setOpenQuestion] = useState<number | null>(null);
 
@@ -81,8 +81,9 @@ export default function FrequentlyAskedQuestions({
                 src={imageSrc1}
                 alt="Medical care team"
                 fill
+                quality={95}
                 className="object-cover object-top"
-                sizes="(max-width: 640px) 60vw, (max-width: 1024px) 300px, 300px"
+                sizes="(max-width: 640px) 57vw, (max-width: 1024px) 305px, 305px"
               />
             </div>
             <div className="absolute bottom-[3%] right-[2%] h-[62%] w-[54%] overflow-hidden rounded-[28px] border-[5px] border-white shadow-[0_24px_55px_-24px_rgb(23_23_23_/_35%)] sm:border-[7px]">
@@ -90,8 +91,9 @@ export default function FrequentlyAskedQuestions({
                 src={imageSrc2}
                 alt="Doctor providing care"
                 fill
+                quality={95}
                 className="object-cover object-top"
-                sizes="(max-width: 640px) 52vw, (max-width: 1024px) 270px, 270px"
+                sizes="(max-width: 640px) 51vw, (max-width: 1024px) 270px, 270px"
               />
             </div>
             <div className="absolute bottom-[5%] left-[11%] h-12 w-12 rounded-full border-[9px] border-[#dd7900]/80 sm:h-16 sm:w-16" />

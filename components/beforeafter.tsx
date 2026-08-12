@@ -7,25 +7,25 @@ import { useBookingModal } from "./BookingModalProvider";
 
 const images = [
   {
-    src: "/bfaf-1.png",
+    src: "https://res.cloudinary.com/x6ec5hqm/image/upload/v1786554551/bfaf-1.png",
     alt: "Hair treatment client result 1",
   },
   {
-    src: "/bfaf-2.png",
+    src: "https://res.cloudinary.com/x6ec5hqm/image/upload/v1786554553/bfaf-2.png",
     alt: "Hair treatment client result 2",
   },
   {
-    src: "/bfaf-3.png",
+    src: "https://res.cloudinary.com/x6ec5hqm/image/upload/v1786554550/bfaf-3.png",
     alt: "Hair treatment client result 3",
   },
   {
-    src: "/bfaf-4.png",
+    src: "https://res.cloudinary.com/x6ec5hqm/image/upload/v1786554550/bfaf-4.png",
     alt: "Hair treatment client result 4",
   },
-  {
-    src: "/bfaf-5.png",
-    alt: "Hair treatment client result 5",
-  },
+  // {
+  //   src: "/bfaf-5.png",
+  //   alt: "Hair treatment client result 5",
+  // },
   // {
   //   src: "/bfaf-6.png",
   //   alt: "Hair treatment client result 6",

@@ -74,7 +74,7 @@ const INFO: InfoItem[] = [
     row: "top",
     title: "Book Your Appointment",
     color: "#c6a03b",
-    icon: "/out-icons-1.png",
+    icon: "https://res.cloudinary.com/x6ec5hqm/image/upload/v1786551430/out-icons-1.png",
     text: "Choose a convenient time for your consultation.",
   },
   {
@@ -83,7 +83,7 @@ const INFO: InfoItem[] = [
     row: "bottom",
     title: "Meet the Doctor",
     color: "#dd7900",
-    icon: "/out-icons-2.png",
+    icon: "https://res.cloudinary.com/x6ec5hqm/image/upload/v1786551430/out-icons-2.png",
     text: "Discuss your concerns and receive a detailed skin assessment.",
   },
   {
@@ -92,7 +92,7 @@ const INFO: InfoItem[] = [
     row: "top",
     title: "Receive a Personalised Treatment Plan",
     color: "#c6a03b",
-    icon: "/out-icons-3.png",
+    icon: "https://res.cloudinary.com/x6ec5hqm/image/upload/v1786551430/out-icons-3.png",
     text: "Get recommendations tailored to your skin and treatment goals.",
   },
   {
@@ -101,7 +101,7 @@ const INFO: InfoItem[] = [
     row: "bottom",
     title: "Begin Your Treatment",
     color: "#dd7900",
-    icon: "/out-icons-4.png",
+    icon: "https://res.cloudinary.com/x6ec5hqm/image/upload/v1786551430/out-icons-4.png",
     text: "Start your treatment with continued support and follow-up care.",
   },
 ];

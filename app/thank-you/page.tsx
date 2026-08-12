@@ -39,7 +39,7 @@ export default function ThankYouPage() {
           {/* eslint-disable-next-line @next/next/no-img-element */}
           <img
             className="h-11 w-auto mix-blend-multiply sm:h-14 lg:h-26"
-            src="/logos.jpeg"
+            src="https://res.cloudinary.com/x6ec5hqm/image/upload/v1786551430/logos.jpg"
             alt="Carewell Clinic and Academy — Skin, Hair, Laser"
           />
         </Link>

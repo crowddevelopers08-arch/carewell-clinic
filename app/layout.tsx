@@ -28,13 +28,13 @@ export const metadata: Metadata = {
 
   icons: {
     icon: [
-      { url: "/logos.jpeg", sizes: "any" },
-      { url: "/logos.jpeg", type: "image/png", sizes: "32x32" },
-      { url: "/logos.jpeg", type: "image/png", sizes: "192x192" },
-      { url: "/logos.jpeg", type: "image/png", sizes: "512x512" },
+      { url: "https://res.cloudinary.com/x6ec5hqm/image/upload/v1786551430/logos.jpg", sizes: "any" },
+      { url: "https://res.cloudinary.com/x6ec5hqm/image/upload/v1786551430/logos.jpg", type: "image/jpeg", sizes: "32x32" },
+      { url: "https://res.cloudinary.com/x6ec5hqm/image/upload/v1786551430/logos.jpg", type: "image/jpeg", sizes: "192x192" },
+      { url: "https://res.cloudinary.com/x6ec5hqm/image/upload/v1786551430/logos.jpg", type: "image/jpeg", sizes: "512x512" },
     ],
-    apple: [{ url: "/logos.jpeg", sizes: "180x180" }],
-    shortcut: ["/logos.jpeg"],
+    apple: [{ url: "https://res.cloudinary.com/x6ec5hqm/image/upload/v1786551430/logos.jpg", sizes: "180x180" }],
+    shortcut: ["https://res.cloudinary.com/x6ec5hqm/image/upload/v1786551430/logos.jpg"],
   },
 };
 

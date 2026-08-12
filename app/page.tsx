@@ -10,12 +10,13 @@ import FrequentlyAskedQuestions from "@/components/FrequentlyAskedQuestions";
 import ContactMapSection from "@/components/ContactMapSection";
 import Footer from "@/components/Footer";
 import { MobileActionBar } from "@/components/MobileActionBar";
+import ScientificHealthcareHero from "@/components/ScientificHealthcareHero";
 
 export default function Home() {
 
   return(
   <>
-  <DermalHero />
+  <ScientificHealthcareHero />
   <BeforeAfter />
   <AboutDental />
   <DentalServices />

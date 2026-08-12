@@ -22,20 +22,21 @@ export default function AboutDental() {
         >
           <div className="about-dental__photo about-dental__photo--a">
             <img
-              src="/doctors.avif"
+              src="https://res.cloudinary.com/x6ec5hqm/image/upload/v1786553627/_DSC4574.jpg"
               alt="Dr Dinesh K. Manjrekar performing a facial skin treatment"
-              className="w-full object-cover object-center h-full"
+              className="w-full object-cover object-bottom h-full"
             />
           </div>  
           <div className="about-dental__photo about-dental__photo--b">
             <img
-              src="/doctor2.avif"
+              src="https://res.cloudinary.com/x6ec5hqm/image/upload/a_-90/_DSC4578.jpg"
               alt="Relaxing skincare treatment session at Carewell Clinic"
+              className="h-full w-full object-cover"
             />
           </div>
           <div className="about-dental__photo about-dental__photo--c">
             <img
-              src="/carewell-image-3.webp"
+              src="https://res.cloudinary.com/x6ec5hqm/image/upload/v1786554265/carewell-image-3.webp"
               alt="Dr Dinesh K. Manjrekar consulting with a patient"
             />
           </div>
@@ -118,7 +119,7 @@ export default function AboutDental() {
         .about-dental__photo--a { left: 90px; top: 0; width: 300px; height: 260px; z-index: 2; box-shadow: 0 20px 40px rgba(23, 23, 23, 0.14); }
         .about-dental__photo--a img { object-position: center 30%; }
         .about-dental__photo--b { left: 0; top: 300px; width: 380px; height: 340px; }
-        .about-dental__photo--b img { object-position: center center; }
+        .about-dental__photo--b img { object-position: center 65%; }
         .about-dental__photo--c { left: 410px; top: 30px; width: 380px; height: 580px; }
         .about-dental__photo--c img { object-position: 53% center; }
         .about-dental__text { padding-top: 0; max-width: 795px; }
