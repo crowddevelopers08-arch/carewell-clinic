@@ -51,7 +51,7 @@ export default function ContactMapSection({
         <h2 className="[font-family:'Cormorant_Garamond',serif] text-[36px] font-semibold leading-tight text-[#171717] md:text-[46px] lg:col-start-2 lg:row-start-2 lg:text-[54px]">
           Speak With Our {" "}
           <span className="relative inline-block italic text-[#c6a03b]">
-            Dental Experts .
+          Skin Care Experts .
             <svg
               className="absolute -bottom-2 left-0 w-full"
               height="10"
