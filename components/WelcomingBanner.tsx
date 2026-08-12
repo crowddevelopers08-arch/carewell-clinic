@@ -9,7 +9,7 @@ type WelcomingBannerProps = {
   bgImage?: string;
 };
 
-export default function WelcomingBanner({ bgImage = "/carewell-image-2.webp" }: WelcomingBannerProps) {
+export default function WelcomingBanner({ bgImage = "https://res.cloudinary.com/x6ec5hqm/image/upload/v1786555403/carewell-image-2.webp" }: WelcomingBannerProps) {
   const [showTop, setShowTop] = useState(false);
   const { openModal } = useBookingModal();
 

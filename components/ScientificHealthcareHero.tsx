@@ -2,6 +2,7 @@
 
 import Image from "next/image";
 import { Cormorant_Garamond, Inter } from "next/font/google";
+import { useState } from "react";
 import {
   ArrowRight,
   ArrowUpRight,
@@ -10,6 +11,7 @@ import {
   Menu,
   ShoppingBag,
   Smartphone,
+  X,
 } from "lucide-react";
 import { useBookingModal } from "./BookingModalProvider";
 
@@ -43,6 +45,7 @@ const heroSlides = [
 
 export default function ScientificHealthcareHero() {
   const { openModal } = useBookingModal();
+  const [menuOpen, setMenuOpen] = useState(false);
 
   return (
     <section
@@ -76,8 +79,47 @@ export default function ScientificHealthcareHero() {
             </button>
           </div>
 
-          <button type="button" aria-label="Open menu" className="grid h-9 w-9 place-items-center rounded-full bg-[#171717] text-white lg:hidden"><Menu size={18} /></button>
+          <button
+            type="button"
+            aria-label={menuOpen ? "Close menu" : "Open menu"}
+            aria-expanded={menuOpen}
+            aria-controls="scientific-mobile-menu"
+            onClick={() => setMenuOpen((open) => !open)}
+            className="grid h-10 w-10 cursor-pointer place-items-center rounded-full bg-[#171717] text-white lg:hidden"
+          >
+            {menuOpen ? <X size={19} /> : <Menu size={19} />}
+          </button>
         </nav>
+
+        {menuOpen && (
+          <div id="scientific-mobile-menu" className="border-t border-[#c6a03b]/20 bg-[#f7f5f1] px-5 py-5 text-[#171717] shadow-[0_18px_35px_-22px_rgba(23,23,23,.45)] lg:hidden">
+            <nav aria-label="Mobile navigation" className="flex flex-col gap-1">
+              {links.map(([label, href]) => (
+                <a
+                  key={label}
+                  href={href}
+                  onClick={() => setMenuOpen(false)}
+                  className="rounded-xl px-4 py-3 text-[14px] font-medium transition-colors hover:bg-[#c6a03b]/10"
+                >
+                  {label}
+                </a>
+              ))}
+              <button
+                type="button"
+                onClick={() => {
+                  setMenuOpen(false);
+                  openModal();
+                }}
+                className="mt-3 inline-flex cursor-pointer items-center justify-center gap-3 rounded-full bg-[#171717] px-5 py-2.5 text-sm font-medium tracking-[0.03em] text-white"
+              >
+                Book Your Consultation
+                <span className="inline-flex h-8 w-8 items-center justify-center rounded-full bg-white text-[#171717]">
+                  <ArrowUpRight className="h-4 w-4" strokeWidth={2.5} />
+                </span>
+              </button>
+            </nav>
+          </div>
+        )}
       </header>
 
       <div className="relative z-10 grid min-h-[656px] grid-cols-1 pb-28 lg:grid-cols-[50%_50%] lg:pb-0">
