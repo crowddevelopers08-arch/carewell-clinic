@@ -53,7 +53,7 @@ const socials = [
 
 export default function Footer() {
   return (
-<footer className="bg-black text-white/80 py-5 [font-family:'Cormorant_Garamond',serif]">
+<footer className="bg-black max-sm:mb-13 text-white/80 py-5 [font-family:'Cormorant_Garamond',serif]">
   <div className="relative z-10 mx-auto max-w-6xl">
     <div className="flex flex-col items-center justify-between gap-3 text-center sm:flex-row sm:text-left">
       <p className="text-[16px] text-white/80">

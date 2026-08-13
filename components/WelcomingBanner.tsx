@@ -37,7 +37,7 @@ export default function WelcomingBanner({ bgImage = "https://res.cloudinary.com/
         )}
 
         <div className="relative mx-auto flex max-w-6xl flex-col items-center px-6 py-16 text-center sm:px-10 md:min-h-[400px] md:justify-center md:py-20">
-          <span className="text-[12px] [font-family:'Cormorant_Garamond',serif] font-medium uppercase tracking-[0.18em] text-[#c6a03b] md:text-[13px] lg:text-[14px]">
+          <span className="text-[12px] [font-family:'Cormorant_Garamond',serif] font-bold font-medium uppercase tracking-[0.18em] text-[#ffd900] md:text-[13px] lg:text-[14px]">
             Healthy Skin Starts with the Right Care
           </span>
           <h2 className="mt-3 [font-family:'Cormorant_Garamond',serif] text-[36px] font-semibold leading-tight text-white md:text-[46px] lg:text-[44px]">
