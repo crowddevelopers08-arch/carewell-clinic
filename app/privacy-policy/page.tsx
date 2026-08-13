@@ -1,7 +1,21 @@
 import Link from "next/link";
 import type { Metadata } from "next";
+import { Cormorant_Garamond, Inter } from "next/font/google";
 import { ArrowLeft, Phone } from "lucide-react";
 import Footer from "@/components/Footer";
+
+const inter = Inter({
+  subsets: ["latin"],
+  weight: ["300", "400", "500", "600"],
+  display: "swap",
+});
+
+const cormorant = Cormorant_Garamond({
+  subsets: ["latin"],
+  weight: ["400", "600"],
+  style: ["normal", "italic"],
+  display: "swap",
+});
 
 export const metadata: Metadata = {
   title: "Privacy Policy | Carewell Clinic and Academy",
@@ -32,13 +46,13 @@ const sections = [
   },
   {
     title: "Contact Us",
-    body: "If you have questions about this Privacy Policy or how your information is handled, reach out to us at carewellskinhairlaserclinic@gmail.com or +91 82919 32733.",
+    body: "If you have questions about this Privacy Policy or how your information is handled, reach out to us at carewellskinhairlaserclinic@gmail.com or +91 82919 32733 , +91 8691895355.",
   },
 ];
 
 export default function PrivacyPolicyPage() {
   return (
-    <main className="w-full bg-white [font-family:'Inter',sans-serif]">
+    <main className={`${inter.className} w-full bg-white`}>
       {/* NAV */}
       <nav className="flex items-center justify-around gap-4 border-b border-[#171717]/8 px-6 py-4 sm:px-10 lg:px-14">
         <Link
@@ -89,7 +103,7 @@ export default function PrivacyPolicyPage() {
             <span className="h-px w-6 bg-[#dd7900]" />
           </span>
         </div>
-        <h1 className="mt-4 [font-family:'Cormorant_Garamond',serif] text-[36px] font-semibold leading-tight text-[#171717] md:text-[46px]">
+        <h1 className={`${cormorant.className} mt-4 text-[36px] font-semibold leading-tight text-[#171717] md:text-[46px]`}>
           Privacy <span className="italic text-[#c6a03b]">Policy</span>
         </h1>
         <p className="mt-3 text-[13.5px] font-medium uppercase tracking-[0.1em] text-[#171717]/45">
@@ -112,7 +126,7 @@ export default function PrivacyPolicyPage() {
                 {String(i + 1).padStart(2, "0")}
               </span>
               <div>
-                <h2 className="[font-family:'Cormorant_Garamond',serif] text-[21px] font-semibold text-[#171717] md:text-[23px]">
+                <h2 className={`${cormorant.className} text-[21px] font-semibold text-[#171717] md:text-[23px]`}>
                   {s.title}
                 </h2>
                 <p className="mt-2 text-[15px] leading-relaxed text-[#171717]/70">

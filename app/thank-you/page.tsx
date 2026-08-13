@@ -1,7 +1,21 @@
 import Link from "next/link";
 import type { Metadata } from "next";
+import { Cormorant_Garamond, Inter } from "next/font/google";
 import { ArrowLeft, Phone } from "lucide-react";
 import Footer from "@/components/Footer";
+
+const inter = Inter({
+  subsets: ["latin"],
+  weight: ["300", "400", "500", "600"],
+  display: "swap",
+});
+
+const cormorant = Cormorant_Garamond({
+  subsets: ["latin"],
+  weight: ["400", "600"],
+  style: ["normal", "italic"],
+  display: "swap",
+});
 
 export const metadata: Metadata = {
   title: "Thank You | Carewell Clinic and Academy",
@@ -28,7 +42,7 @@ const nextSteps = [
 
 export default function ThankYouPage() {
   return (
-    <main className="min-h-screen overflow-hidden bg-[#f7f5f1] text-[#171717] [font-family:'Inter',sans-serif]">
+    <main className={`${inter.className} min-h-screen overflow-hidden bg-[#f7f5f1] text-[#171717]`}>
       {/* NAV */}
       <nav className="flex items-center justify-around gap-4 border-b border-[#171717]/8 bg-[#f7f5f1] px-4 py-4 sm:px-6 sm:py-5 lg:px-14">
         <Link
@@ -127,7 +141,7 @@ export default function ThankYouPage() {
               </span>
             </p>
 
-            <h1 className="mx-auto mt-4 max-w-3xl [font-family:'Cormorant_Garamond',serif] text-[28px] leading-[1.15] font-semibold tracking-tight sm:text-4xl sm:leading-[1.1] md:text-5xl lg:text-[58px]">
+            <h1 className={`${cormorant.className} mx-auto mt-4 max-w-3xl text-[28px] leading-[1.15] font-semibold tracking-tight sm:text-4xl sm:leading-[1.1] md:text-5xl lg:text-[58px]`}>
               Thank you for choosing{" "}
               <span className="italic text-[#c6a03b]">
                 Carewell Clinic and Academy.
@@ -145,7 +159,7 @@ export default function ThankYouPage() {
                   key={step.number}
                   className="rounded-2xl border border-[#c6a03b]/20 bg-[#f7f5f1] p-5"
                 >
-                  <span className="[font-family:'Cormorant_Garamond',serif] text-sm font-bold text-[#c6a03b]/70">
+                  <span className={`${cormorant.className} text-sm font-bold text-[#c6a03b]/70`}>
                     {step.number}
                   </span>
                   <h2 className="mt-3 text-base font-bold text-[#171717] sm:text-lg">
