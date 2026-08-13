@@ -89,7 +89,7 @@ export default function ContactMapSection({
           </li>
           <li className="flex items-center gap-4">
             <Phone size={20} className="shrink-0 text-[#c6a03b]" />
-            <span className="text-[15px] text-slate-600">+91 82919 32733</span>
+            <span className="text-[15px] text-slate-600">+91 82919 32733 , +91 8691895355</span>
           </li>
           <li className="flex items-center gap-4">
             <Mail size={20} className="shrink-0 text-[#c6a03b]" />
