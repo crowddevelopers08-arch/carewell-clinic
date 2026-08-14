@@ -2,7 +2,7 @@
 
 import Image from "next/image";
 import { Cormorant_Garamond, Inter } from "next/font/google";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import {
   ArrowRight,
   ArrowUpRight,
@@ -43,9 +43,53 @@ const heroSlides = [
   "https://res.cloudinary.com/x6ec5hqm/image/upload/v1786553626/_DSC4688.jpg",
 ];
 
+const physicianTitle = "Aesthetic Physician.";
+
 export default function ScientificHealthcareHero() {
   const { openModal } = useBookingModal();
   const [menuOpen, setMenuOpen] = useState(false);
+  const [typedTitle, setTypedTitle] = useState("");
+
+  useEffect(() => {
+    if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) {
+      setTypedTitle(physicianTitle);
+      return;
+    }
+
+    let characterIndex = 0;
+    let isErasing = false;
+    let timeoutId: ReturnType<typeof setTimeout>;
+
+    const animateTitle = () => {
+      if (!isErasing) {
+        characterIndex += 1;
+        setTypedTitle(physicianTitle.slice(0, characterIndex));
+
+        if (characterIndex === physicianTitle.length) {
+          isErasing = true;
+          timeoutId = setTimeout(animateTitle, 1600);
+          return;
+        }
+
+        timeoutId = setTimeout(animateTitle, 85);
+        return;
+      }
+
+      characterIndex -= 1;
+      setTypedTitle(physicianTitle.slice(0, characterIndex));
+
+      if (characterIndex === 0) {
+        isErasing = false;
+        timeoutId = setTimeout(animateTitle, 500);
+        return;
+      }
+
+      timeoutId = setTimeout(animateTitle, 45);
+    };
+
+    timeoutId = setTimeout(animateTitle, 400);
+    return () => clearTimeout(timeoutId);
+  }, []);
 
   return (
     <section
@@ -140,8 +184,13 @@ export default function ScientificHealthcareHero() {
         <div className="flex items-start px-7 max-sm:pb-5 pb-16 pt-10 sm:px-12 lg:order-1 lg:px-14 lg:pt-[80px] xl:pl-[95px] xl:pr-12">
           <div className="max-w-[520px]">
             <h1 className={`${cormorant.className} text-[36px] leading-[1.15] font-semibold text-white md:text-[46px] lg:text-[58px]`}>
-              Expert <em className="italic text-[#c6a03b]">Skin Care</em> by<br />Dr Dinesh K. Manjrekar
+              Expert <em className="italic text-[#c6a03b]">Skin Care</em> by<br />Dr Dinesh K. Manjrekar.
             </h1>
+            <h3 aria-label={physicianTitle} className={`${cormorant.className} mt-1 text-[24px] font-semibold md:text-[28px] lg:text-[32px]`}>
+              <span aria-hidden="true" className="text-white">{typedTitle.slice(0, 9)}</span>
+              <span aria-hidden="true" className="text-[#dd7900]">{typedTitle.slice(9)}</span>
+              <span aria-hidden="true" className="ml-0.5 inline-block animate-pulse font-normal text-[#dd7900]">|</span>
+            </h3>
             <p className="mt-5 text-[18px] leading-relaxed font-medium text-white/90">
               Personalised treatments for acne, acne scars, pigmentation, skin rejuvenation, anti-ageing, and more.
             </p>

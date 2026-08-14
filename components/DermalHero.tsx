@@ -153,7 +153,7 @@ export default function CarewellHero() {
             <span className="font-medium text-white/90">
               Dr Dinesh K. Manjrekar
             </span>{" "}
-            — MD Dermatology
+             MD Dermatology
           </p>
 
           {/* RIGHT — main arch photo, then a gap, then two photos stacked in a column */}
