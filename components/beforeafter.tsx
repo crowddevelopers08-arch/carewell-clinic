@@ -85,7 +85,7 @@ export default function BeforeAfter() {
       <div className="pointer-events-none absolute -right-24 -top-32 h-[420px] w-[420px] rounded-full bg-[#c6a03b]/[0.10] blur-3xl" />
       <div className="pointer-events-none absolute -bottom-28 -left-16 h-[360px] w-[360px] rounded-full bg-[#dd7900]/[0.08] blur-3xl" />
 
-      {/* Faint strand linework echoing the CTA section's texture */}
+      {/* Faint strand linework echoing the CTA section texture */}
       <svg
         className="pointer-events-none absolute inset-0 h-full w-full opacity-[0.05]"
         preserveAspectRatio="none"
