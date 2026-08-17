@@ -6,13 +6,13 @@ import { ArrowLeft, ArrowRight, ArrowUpRight } from "lucide-react";
 import { useBookingModal } from "./BookingModalProvider";
 
 const comparisons = [
-  { before: "https://res.cloudinary.com/x6ec5hqm/image/upload/v1786639658/IMG_3019.jpg", after: "https://res.cloudinary.com/x6ec5hqm/image/upload/v1786639659/IMG_5839.jpg", alt: "Treatment result 1" },
-  { before: "https://res.cloudinary.com/x6ec5hqm/image/upload/v1786639658/IMG_6650.jpg", after: "https://res.cloudinary.com/x6ec5hqm/image/upload/v1786639659/IMG_8535.jpg", alt: "Treatment result 2" },
+  { before: "https://res.cloudinary.com/x6ec5hqm/image/upload/v1786969360/care-1.png", after: "https://res.cloudinary.com/x6ec5hqm/image/upload/v1786969353/care-2.png", alt: "Treatment result 1" },
+  { before: "https://res.cloudinary.com/x6ec5hqm/image/upload/v1786969353/care-3.png", after: "https://res.cloudinary.com/x6ec5hqm/image/upload/v1786969353/care-4.png", alt: "Treatment result 2" },
   { before: "https://res.cloudinary.com/x6ec5hqm/image/upload/v1786639657/IMG_5229.jpg", after: "https://res.cloudinary.com/x6ec5hqm/image/upload/v1786639657/IMG_8719.jpg", alt: "Treatment result 3" },
   { before: "https://res.cloudinary.com/x6ec5hqm/image/upload/v1786639656/IMG_5831.jpg", after: "https://res.cloudinary.com/x6ec5hqm/image/upload/v1786639657/IMG_8041.jpg", alt: "Treatment result 4" },
   { before: "https://res.cloudinary.com/x6ec5hqm/image/upload/v1786639656/IMG_5895.jpg", after: "https://res.cloudinary.com/x6ec5hqm/image/upload/v1786639656/c033b381-dddf-4eec-8be3-7a410d6f4291.jpg", alt: "Treatment result 5" },
-  { before: "https://res.cloudinary.com/x6ec5hqm/image/upload/v1786639655/IMG_4073.jpg", after: "https://res.cloudinary.com/x6ec5hqm/image/upload/v1786639655/IMG_8041_1.jpg", alt: "Treatment result 6" },
-  { before: "https://res.cloudinary.com/x6ec5hqm/image/upload/v1786639655/IMG_3136.jpg", after: "https://res.cloudinary.com/x6ec5hqm/image/upload/v1786639799/IMG_4995.jpg", alt: "Treatment result 7" },
+  { before: "https://res.cloudinary.com/x6ec5hqm/image/upload/v1786969355/care-6.png", after: "https://res.cloudinary.com/x6ec5hqm/image/upload/v1786969353/care-5.png", alt: "Treatment result 6" },
+  { before: "https://res.cloudinary.com/x6ec5hqm/image/upload/v1786969352/care-7.png", after: "https://res.cloudinary.com/x6ec5hqm/image/upload/v1786969559/care-8.png", alt: "Treatment result 7" },
 ];
 
 function BeforeAfterSlider({ before, after, alt }: { before: string; after: string; alt: string }) {

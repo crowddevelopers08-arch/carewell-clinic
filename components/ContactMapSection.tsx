@@ -97,7 +97,7 @@ export default function ContactMapSection({
           </li>
           <li className="flex items-center gap-4">
             <Clock size={20} className="shrink-0 text-[#c6a03b]" />
-            <span className="text-[15px] text-slate-600">Mon to Sat 9:00AM to 9:00PM</span>
+            <span className="text-[15px] text-slate-600">Mon to Sat 10:30AM to 9:00PM</span>
           </li>
         </ul>
 
