@@ -51,7 +51,7 @@ export default function ThankYouPage() {
         dangerouslySetInnerHTML={{
           __html: `
             gtag('event', 'conversion', {
-              'send_to': 'AW-18400739132/cN9BCLTp5-QcELz-k8ZE'
+              'send_to': 'AW-18400739132/_HkCCKrpquUcELz-k8ZE'
             });
           `,
         }}
