@@ -18,9 +18,9 @@ const cormorant = Cormorant_Garamond({
 });
 
 export const metadata: Metadata = {
-  title: "Privacy Policy | Carewell Clinic and Academy",
+  title: "Privacy Policy | Carewell Clinic and Acadamy",
   description:
-    "How Carewell Clinic and Academy collects, uses and protects your information.",
+    "How Carewell Clinic and Acadamy collects, uses and protects your information.",
 };
 
 const sections = [
@@ -57,14 +57,14 @@ export default function PrivacyPolicyPage() {
       <nav className="flex items-center justify-around gap-4 border-b border-[#171717]/8 px-6 py-4 sm:px-10 lg:px-14">
         <Link
           href="/"
-          aria-label="Carewell Clinic and Academy"
+          aria-label="Carewell Clinic and Acadamy"
           className="flex shrink-0 items-center"
         >
           {/* eslint-disable-next-line @next/next/no-img-element */}
           <img
             className="h-12 w-auto mix-blend-multiply sm:h-20"
             src="https://res.cloudinary.com/x6ec5hqm/image/upload/v1787231072/logos.webp"
-            alt="Carewell Clinic and Academy — Skin, Hair, Laser"
+            alt="Carewell Clinic and Acadamy — Skin, Hair, Laser"
           />
         </Link>
 
@@ -111,7 +111,7 @@ export default function PrivacyPolicyPage() {
         </p>
 
         <p className="mt-8 max-w-2xl text-[15.5px] leading-relaxed text-[#171717]/70">
-          Carewell Clinic and Academy respects your privacy. This policy
+          Carewell Clinic and Acadamy respects your privacy. This policy
           explains what information we collect, how we use it, and the choices
           you have.
         </p>

@@ -57,7 +57,7 @@ export default function Footer() {
   <div className="relative z-10 mx-auto max-w-6xl">
     <div className="flex flex-col items-center justify-between gap-3 text-center sm:flex-row sm:text-left">
       <p className="text-[16px] text-white/80">
-        © {new Date().getFullYear()} Carewell Clinic and Academy. All rights reserved.
+        © {new Date().getFullYear()} Carewell Clinic and Acadamy. All rights reserved.
       </p>
 
       <div className="flex items-center gap-5">

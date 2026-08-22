@@ -6,11 +6,11 @@ import BookingModalProvider from "@/components/BookingModalProvider";
 export const metadata: Metadata = {
   metadataBase: new URL("https://www.carewellconsultation.com"),
   title: {
-    default: "Carewell Clinic and Academy | Advanced Skin Care & Aesthetic Clinic",
-    template: "%s | Carewell Clinic and Academy",
+    default: "Carewell Clinic and Acadamy | Advanced Skin Care & Aesthetic Clinic",
+    template: "%s | Carewell Clinic and Acadamy",
   },
   description:
-    "Carewell Clinic and Academy offers expert skin care consultations for acne, acne scars, pigmentation, anti-ageing, skin rejuvenation and laser hair removal. Book a personalised consultation with our certified aesthetic specialists today.",
+    "Carewell Clinic and Acadamy offers expert skin care consultations for acne, acne scars, pigmentation, anti-ageing, skin rejuvenation and laser hair removal. Book a personalised consultation with our certified aesthetic specialists today.",
   keywords: [
     "skin care clinic",
     "dermatologist",
@@ -21,11 +21,11 @@ export const metadata: Metadata = {
     "skin rejuvenation",
     "laser hair removal",
     "aesthetic clinic",
-    "Carewell Clinic and Academy",
+    "Carewell Clinic and Acadamy",
   ],
-  authors: [{ name: "Carewell Clinic and Academy" }],
-  creator: "Carewell Clinic and Academy",
-  publisher: "Carewell Clinic and Academy",
+  authors: [{ name: "Carewell Clinic and Acadamy" }],
+  creator: "Carewell Clinic and Acadamy",
+  publisher: "Carewell Clinic and Acadamy",
 
   icons: {
     icon: [

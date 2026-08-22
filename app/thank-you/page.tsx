@@ -19,7 +19,7 @@ const cormorant = Cormorant_Garamond({
 });
 
 export const metadata: Metadata = {
-  title: "Thank You | Carewell Clinic and Academy",
+  title: "Thank You | Carewell Clinic and Acadamy",
   description: "Your consultation request has been received.",
 };
 
@@ -62,14 +62,14 @@ export default function ThankYouPage() {
         <nav className="flex items-center justify-around gap-4 border-b border-[#171717]/8 bg-[#f7f5f1] px-4 py-4 sm:px-6 sm:py-5 lg:px-14">
           <Link
             href="/"
-            aria-label="Carewell Clinic and Academy"
+            aria-label="Carewell Clinic and Acadamy"
             className="flex shrink-0 items-center"
           >
             {/* eslint-disable-next-line @next/next/no-img-element */}
             <img
               className="h-11 w-auto mix-blend-multiply sm:h-14 lg:h-26"
               src="https://res.cloudinary.com/x6ec5hqm/image/upload/v1787231072/logos.webp"
-              alt="Carewell Clinic and Academy — Skin, Hair, Laser"
+              alt="Carewell Clinic and Acadamy — Skin, Hair, Laser"
             />
           </Link>
 
@@ -159,7 +159,7 @@ export default function ThankYouPage() {
               <h1 className={`${cormorant.className} mx-auto mt-4 max-w-3xl text-[28px] leading-[1.15] font-semibold tracking-tight sm:text-4xl sm:leading-[1.1] md:text-5xl lg:text-[58px]`}>
                 Thank you for choosing{" "}
                 <span className="italic text-[#c6a03b]">
-                  Carewell Clinic and Academy.
+                  Carewell Clinic and Acadamy.
                 </span>
               </h1>
               <p className="mx-auto mt-3 max-w-2xl text-[15px] leading-7 text-[#171717]/65 sm:mt-4 sm:text-base sm:leading-8 lg:text-lg">
@@ -189,7 +189,7 @@ export default function ThankYouPage() {
 
               <div className="mt-6 flex flex-col items-center justify-center gap-3 sm:mt-8 sm:flex-row">
                 <a
-                  href="https://wa.me/918291932733?text=Hi%2C%20I%20submitted%20a%20consultation%20request%20for%20Carewell%20Clinic%20and%20Academy."
+                  href="https://wa.me/918291932733?text=Hi%2C%20I%20submitted%20a%20consultation%20request%20for%20Carewell%20Clinic%20and%20Acadamy."
                   className="inline-flex h-[52px] w-full min-w-0 items-center justify-center rounded-full bg-[#dd7900] px-7 text-sm font-bold text-white shadow-lg shadow-[#dd7900]/20 transition hover:-translate-y-0.5 hover:bg-[#171717] hover:!text-white sm:w-auto sm:min-w-[230px]"
                 >
                   Continue on WhatsApp →
@@ -211,7 +211,7 @@ export default function ThankYouPage() {
             </div>
 
             <p className="mt-4 text-center text-[13px] text-[#171717]/50 sm:text-sm">
-              Carewell Clinic and Academy · Andheri (E), Mumbai · Mon–Sat, 9 AM–9
+              Carewell Clinic and Acadamy · Andheri (E), Mumbai · Mon–Sat, 9 AM–9
               PM
             </p>
           </div>

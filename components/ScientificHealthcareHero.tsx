@@ -102,8 +102,8 @@ export default function ScientificHealthcareHero() {
       <header className="relative z-30 w-full overflow-hidden shadow-[0_12px_25px_rgba(9,45,76,.15)] lg:rounded-b-[8px]">
 
         <nav className="grid min-h-[76px] grid-cols-[1fr_auto] items-center bg-[#f7f5f1] px-6 text-[#171717] lg:grid-cols-[240px_minmax(0,1fr)_300px] lg:px-12 xl:grid-cols-[280px_minmax(0,1fr)_320px] xl:px-20">
-          <a href="#top" className="flex items-center" aria-label="Carewell Clinic and Academy home">
-            <Image src="https://res.cloudinary.com/x6ec5hqm/image/upload/v1786551430/logos.jpg" alt="Carewell Clinic and Academy — Skin, Hair, Laser" width={738} height={541} priority className="h-[66px] w-[165px] object-contain object-center mix-blend-multiply" />
+          <a href="#top" className="flex items-center" aria-label="Carewell Clinic and Acadamy home">
+            <Image src="https://res.cloudinary.com/x6ec5hqm/image/upload/v1786551430/logos.jpg" alt="Carewell Clinic and Acadamy — Skin, Hair, Laser" width={738} height={541} priority className="h-[66px] w-[165px] object-contain object-center mix-blend-multiply" />
           </a>
 
           <div className="hidden list-none items-center justify-around gap-1 rounded-full border border-[#c6a03b]/25 bg-white p-1.5 lg:flex">

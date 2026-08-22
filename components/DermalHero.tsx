@@ -45,14 +45,14 @@ export default function CarewellHero() {
       <nav className="relative flex items-center justify-between gap-6 bg-[#f7f5f1] px-6 py-4 lg:px-28">
         <a
           href="#top"
-          aria-label="Carewell Clinic and Academy"
+          aria-label="Carewell Clinic and Acadamy"
           className="flex shrink-0 items-center"
         >
           {/* eslint-disable-next-line @next/next/no-img-element */}
           <img
             className="h-16 w-auto mix-blend-multiply lg:h-25"
             src="https://res.cloudinary.com/x6ec5hqm/image/upload/v1787231072/logos.webp"
-            alt="Carewell Clinic and Academy — Skin, Hair, Laser"
+            alt="Carewell Clinic and Acadamy — Skin, Hair, Laser"
           />
         </a>
 
