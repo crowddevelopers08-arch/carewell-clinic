@@ -1,9 +1,10 @@
 import type { Metadata } from "next";
+import Script from "next/script";
 import "./globals.css";
 import BookingModalProvider from "@/components/BookingModalProvider";
 
 export const metadata: Metadata = {
-  metadataBase: new URL("https://www.yourclinicdomain.com"),
+  metadataBase: new URL("https://www.carewellconsultation.com"),
   title: {
     default: "Carewell Clinic and Academy | Advanced Skin Care & Aesthetic Clinic",
     template: "%s | Carewell Clinic and Academy",
@@ -41,6 +42,22 @@ export const metadata: Metadata = {
 export default function RootLayout({ children }: LayoutProps<"/">) {
   return (
     <html lang="en" className="h-full scroll-smooth antialiased">
+      <head>
+        {/* Microsoft Clarity */}
+        <Script
+          id="microsoft-clarity"
+          strategy="afterInteractive"
+          dangerouslySetInnerHTML={{
+            __html: `
+              (function(c,l,a,r,i,t,y){
+                c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
+                t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;
+                y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
+              })(window, document, "clarity", "script", "y6bvryfb95");
+            `,
+          }}
+        />
+      </head>
       <body className="min-h-full flex flex-col">
         <BookingModalProvider>{children}</BookingModalProvider>
       </body>
