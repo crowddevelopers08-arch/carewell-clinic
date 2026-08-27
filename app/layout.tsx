@@ -37,6 +37,10 @@ export const metadata: Metadata = {
     apple: [{ url: "https://res.cloudinary.com/x6ec5hqm/image/upload/v1787231072/logos.webp", sizes: "180x180" }],
     shortcut: ["https://res.cloudinary.com/x6ec5hqm/image/upload/v1787231072/logos.webp"],
   },
+
+  verification: {
+    google: "z1jaoYSBnbRPk44HNH7qg2f2YOrltOeRq_cLZBU-iH0",
+  },
 };
 
 export default function RootLayout({ children }: LayoutProps<"/">) {
