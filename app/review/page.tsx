@@ -84,7 +84,9 @@ export default function ReviewPage() {
     }
 
     setLoading(false);
-    window.location.href = GOOGLE_REVIEW_URL;
+    // Low ratings (1–3) stop here — they are NOT sent to the Google review
+    // funnel. Only 4–5 star raters see the Google button (SCREEN 2B).
+    setFormDone(true);
   }
 
   const isLowRating = selected !== null && selected <= 3;
