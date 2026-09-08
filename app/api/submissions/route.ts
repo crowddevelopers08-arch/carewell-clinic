@@ -51,6 +51,25 @@ function normalizeSubmission(body: Record<string, unknown>): SubmissionBody {
 
 const REVIEW_SOURCE = 'Review Page';
 
+// Column shape for the separate "review leads" tab in the Google Sheet.
+const REVIEW_HEADERS = [
+  'Timestamp',
+  'Source',
+  'Name',
+  'Phone',
+  'Rating',
+  'Callback',
+  'Message',
+  'URL',
+  'TeleCRM',
+];
+
+// The review page packs rating/callback into `concern`; strip that tail so the
+// review tab can show the customer's message on its own.
+function stripRatingSuffix(concern: string): string {
+  return concern.split(' | Rating:')[0].trim();
+}
+
 function csvEscape(value: string): string {
   const safeValue = value.replace(/\r?\n/g, ' ');
   if (/[",\n]/.test(safeValue)) return `"${safeValue.replace(/"/g, '""')}"`;
@@ -87,12 +106,27 @@ async function pushToSheet(body: SubmissionBody, timestamp: string, telecrmStatu
   const url = getSheetWebhookUrl();
   if (!url) return null;
 
+  const isReview = body.source === REVIEW_SOURCE;
+
   const row = [
     timestamp,
     body.source,
     body.name,
     body.phone,
     body.concern,
+    body.pageUrl,
+    telecrmStatus,
+  ];
+
+  // Review leads land on their own tab, so they get their own column shape.
+  const reviewRow = [
+    timestamp,
+    body.source,
+    body.name,
+    body.phone,
+    body.rating,
+    body.callback,
+    stripRatingSuffix(body.concern),
     body.pageUrl,
     telecrmStatus,
   ];
@@ -106,14 +140,17 @@ async function pushToSheet(body: SubmissionBody, timestamp: string, telecrmStatu
       name: body.name,
       phone: body.phone,
       concern: body.concern,
+      message: stripRatingSuffix(body.concern),
       pageUrl: body.pageUrl,
       url: body.pageUrl,
       telecrm: telecrmStatus,
       rating: body.rating,
       callback: body.callback,
-      isReview: body.source === REVIEW_SOURCE,
+      isReview,
       headers: HEADERS,
+      reviewHeaders: REVIEW_HEADERS,
       row,
+      reviewRow,
     }),
   });
 
@@ -162,10 +199,17 @@ async function pushToTeleCRM(body: SubmissionBody): Promise<TelecrmResponse | nu
 
   const fields: Record<string, string> = { phone, name: body.name };
 
+  const isReview = body.source === REVIEW_SOURCE;
+  const ratingText = body.rating ? `${body.rating}/5` : 'Not specified';
+  const callbackText = body.callback || 'Not specified';
+
   const details = [
     `Form Name: ${body.source || 'Website'}`,
     `Name: ${body.name || 'Not specified'}`,
     `Phone: ${body.phone || 'Not specified'}`,
+    ...(isReview
+      ? [`Rating: ${ratingText}`, `Callback Requested: ${callbackText}`]
+      : []),
     `Concern: ${body.concern || 'Not specified'}`,
     `URL: ${body.pageUrl || 'Not specified'}`,
   ].join(' | ');
@@ -177,6 +221,12 @@ async function pushToTeleCRM(body: SubmissionBody): Promise<TelecrmResponse | nu
       { type: 'SYSTEM_NOTE', text: `Form Name: ${body.source || 'Website'}` },
       { type: 'SYSTEM_NOTE', text: `Name: ${body.name || 'Not specified'}` },
       { type: 'SYSTEM_NOTE', text: `Phone: ${body.phone || 'Not specified'}` },
+      ...(isReview
+        ? [
+            { type: 'SYSTEM_NOTE', text: `Rating: ${ratingText}` },
+            { type: 'SYSTEM_NOTE', text: `Callback Requested: ${callbackText}` },
+          ]
+        : []),
       { type: 'SYSTEM_NOTE', text: `Condition: ${body.concern || 'Not specified'}` },
       { type: 'SYSTEM_NOTE', text: `URL: ${body.pageUrl || 'Not specified'}` },
     ],
