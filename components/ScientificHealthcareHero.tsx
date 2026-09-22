@@ -38,9 +38,9 @@ const links = [
 ];
 
 const heroSlides = [
-  "https://res.cloudinary.com/x6ec5hqm/image/upload/v1786553633/_DSC4615.jpg",
-  "https://res.cloudinary.com/x6ec5hqm/image/upload/v1786553627/_DSC4586.jpg",
-  "https://res.cloudinary.com/x6ec5hqm/image/upload/v1786553626/_DSC4688.jpg",
+  "https://res.cloudinary.com/glsztjdl/image/upload/v1790062587/_DSC4615.webp",
+  "https://res.cloudinary.com/glsztjdl/image/upload/v1790062587/_DSC4586.webp",
+  "https://res.cloudinary.com/glsztjdl/image/upload/v1790062587/_DSC4688.webp",
 ];
 
 const physicianTitle = "Aesthetic Physician.";
@@ -103,7 +103,7 @@ export default function ScientificHealthcareHero() {
 
         <nav className="grid min-h-[76px] grid-cols-[1fr_auto] items-center bg-[#f7f5f1] px-6 text-[#171717] lg:grid-cols-[240px_minmax(0,1fr)_300px] lg:px-12 xl:grid-cols-[280px_minmax(0,1fr)_320px] xl:px-20">
           <a href="#top" className="flex items-center" aria-label="Carewell Clinic and Acadamy home">
-            <Image src="https://res.cloudinary.com/x6ec5hqm/image/upload/v1786551430/logos.jpg" alt="Carewell Clinic and Acadamy — Skin, Hair, Laser" width={738} height={541} priority className="h-[66px] w-[165px] object-contain object-center mix-blend-multiply" />
+            <Image src="https://res.cloudinary.com/glsztjdl/image/upload/v1790062598/logos.jpg" alt="Carewell Clinic and Acadamy — Skin, Hair, Laser" width={738} height={541} priority className="h-[66px] w-[165px] object-contain object-center mix-blend-multiply" />
           </a>
 
           <div className="hidden list-none items-center justify-around gap-1 rounded-full border border-[#c6a03b]/25 bg-white p-1.5 lg:flex">
@@ -203,11 +203,11 @@ export default function ScientificHealthcareHero() {
               <span className="text-[17px] leading-none tracking-[1px] text-[#ffd000]" aria-label="4.9 out of 5 stars">★★★★★</span>
               <div className="ml-1 flex -space-x-2" aria-label="Carewell patients">
                 {[
-                  "https://res.cloudinary.com/x6ec5hqm/image/upload/v1786554263/doctor1.avif",
-                  "https://res.cloudinary.com/x6ec5hqm/image/upload/v1786554263/doctor2.avif",
-                  "https://res.cloudinary.com/x6ec5hqm/image/upload/v1786554264/doctor3.avif",
-                  "https://res.cloudinary.com/x6ec5hqm/image/upload/v1786554264/carewell-image-5.png",
-                  "https://res.cloudinary.com/x6ec5hqm/image/upload/v1786554264/hero-image.avif",
+                  "https://res.cloudinary.com/glsztjdl/image/upload/v1790062594/doctor1.avif",
+                  "https://res.cloudinary.com/glsztjdl/image/upload/v1790062595/doctor2.avif",
+                  "https://res.cloudinary.com/glsztjdl/image/upload/v1790062595/doctor3.avif",
+                  "https://res.cloudinary.com/glsztjdl/image/upload/v1790062595/carewell-image-5.png",
+                  "https://res.cloudinary.com/glsztjdl/image/upload/v1790062596/hero-image.avif",
                 ].map((src, index) => (
                   <span key={src} className="relative h-8 w-8 overflow-hidden rounded-full border-2 border-white bg-[#ddd] shadow-sm">
                     <Image src={src} alt={`Carewell patient ${index + 1}`} fill sizes="32px" className="object-cover object-top" />

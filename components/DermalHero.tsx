@@ -167,7 +167,7 @@ export default function CarewellHero() {
                 {/* eslint-disable-next-line @next/next/no-img-element */}
                 <img
                   className="h-[380px] w-full object-cover object-top sm:h-[500px]"
-                  src="https://res.cloudinary.com/x6ec5hqm/image/upload/v1786554264/hero-image.avif"
+                  src="https://res.cloudinary.com/glsztjdl/image/upload/v1790062596/hero-image.avif"
                   alt="Carewell Clinic — skin care treatment"
                 />
                 <div className="pointer-events-none absolute inset-0 bg-gradient-to-t from-[#171717]/65 via-[#171717]/0 to-[#171717]/0" />
@@ -211,7 +211,7 @@ export default function CarewellHero() {
                 {/* eslint-disable-next-line @next/next/no-img-element */}
                 <img
                   className="h-[230px] w-full object-cover object-top"
-                  src="https://res.cloudinary.com/x6ec5hqm/image/upload/v1786554264/carewell-image-5.png"
+                  src="https://res.cloudinary.com/glsztjdl/image/upload/v1790062595/carewell-image-5.png"
                   alt="Carewell Clinic patient care"
                 />
               </div>
@@ -219,7 +219,7 @@ export default function CarewellHero() {
                 {/* eslint-disable-next-line @next/next/no-img-element */}
                 <img
                   className="h-[260px] w-full object-cover object-top"
-                  src="https://res.cloudinary.com/x6ec5hqm/image/upload/v1786554264/doctor3.avif"
+                  src="https://res.cloudinary.com/glsztjdl/image/upload/v1790062595/doctor3.avif"
                   alt="Carewell Clinic treatment room"
                 />
               </div>

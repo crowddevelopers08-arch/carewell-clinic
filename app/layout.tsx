@@ -29,13 +29,13 @@ export const metadata: Metadata = {
 
   icons: {
     icon: [
-      { url: "https://res.cloudinary.com/x6ec5hqm/image/upload/v1787231072/logos.webp", sizes: "any" },
-      { url: "https://res.cloudinary.com/x6ec5hqm/image/upload/v1787231072/logos.webp", type: "image/jpeg", sizes: "32x32" },
-      { url: "https://res.cloudinary.com/x6ec5hqm/image/upload/v1787231072/logos.webp", type: "image/jpeg", sizes: "192x192" },
-      { url: "https://res.cloudinary.com/x6ec5hqm/image/upload/v1787231072/logos.webp", type: "image/jpeg", sizes: "512x512" },
+      { url: "https://res.cloudinary.com/glsztjdl/image/upload/v1790062598/logos.jpg", sizes: "any" },
+      { url: "https://res.cloudinary.com/glsztjdl/image/upload/v1790062598/logos.jpg", type: "image/jpeg", sizes: "32x32" },
+      { url: "https://res.cloudinary.com/glsztjdl/image/upload/v1790062598/logos.jpg", type: "image/jpeg", sizes: "192x192" },
+      { url: "https://res.cloudinary.com/glsztjdl/image/upload/v1790062598/logos.jpg", type: "image/jpeg", sizes: "512x512" },
     ],
-    apple: [{ url: "https://res.cloudinary.com/x6ec5hqm/image/upload/v1787231072/logos.webp", sizes: "180x180" }],
-    shortcut: ["https://res.cloudinary.com/x6ec5hqm/image/upload/v1787231072/logos.webp"],
+    apple: [{ url: "https://res.cloudinary.com/glsztjdl/image/upload/v1790062598/logos.jpg", sizes: "180x180" }],
+    shortcut: ["https://res.cloudinary.com/glsztjdl/image/upload/v1790062598/logos.jpg"],
   },
 
   verification: {

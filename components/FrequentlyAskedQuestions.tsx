@@ -33,8 +33,8 @@ const questions = [
 ];
 
 export default function FrequentlyAskedQuestions({
-  imageSrc1 = "https://res.cloudinary.com/x6ec5hqm/image/upload/a_-90/_DSC4625.jpg",
-  imageSrc2 = "https://res.cloudinary.com/x6ec5hqm/image/upload/v1786553627/_DSC4692.jpg",
+  imageSrc1 = "https://res.cloudinary.com/glsztjdl/image/upload/v1790062587/_DSC4625.webp",
+  imageSrc2 = "https://res.cloudinary.com/glsztjdl/image/upload/v1790062587/_DSC4692.webp",
 }: FrequentlyAskedQuestionsProps) {
   const [openQuestion, setOpenQuestion] = useState<number | null>(null);
 

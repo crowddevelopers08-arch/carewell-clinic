@@ -22,21 +22,21 @@ export default function AboutDental() {
         >
           <div className="about-dental__photo about-dental__photo--a">
             <img
-              src="https://res.cloudinary.com/x6ec5hqm/image/upload/v1786553627/_DSC4574.jpg"
+              src="https://res.cloudinary.com/glsztjdl/image/upload/v1790062592/carewell-image-1.webp"
               alt="Dr Dinesh K. Manjrekar performing a facial skin treatment"
               className="w-full object-cover object-bottom h-full"
             />
           </div>  
           <div className="about-dental__photo about-dental__photo--b">
             <img
-              src="https://res.cloudinary.com/x6ec5hqm/image/upload/a_-90/_DSC4578.jpg"
+              src="https://res.cloudinary.com/glsztjdl/image/upload/v1790062593/carewell-image-2.webp"
               alt="Relaxing skincare treatment session at Carewell Clinic"
               className="h-full w-full object-cover"
             />
           </div>
           <div className="about-dental__photo about-dental__photo--c">
             <img
-              src="https://res.cloudinary.com/x6ec5hqm/image/upload/v1786554265/carewell-image-3.webp"
+              src="https://res.cloudinary.com/glsztjdl/image/upload/v1790062594/carewell-image-3.webp"
               alt="Dr Dinesh K. Manjrekar consulting with a patient"
             />
           </div>
