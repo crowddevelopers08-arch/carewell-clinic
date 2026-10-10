@@ -1,0 +1,26 @@
+.section {
+  clip-path: inset(0);
+}
+
+.background {
+  position: fixed;
+  background-image: url("https://res.cloudinary.com/glsztjdl/image/upload/v1790062593/carewell-image-2.webp");
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  transform-origin: center;
+  animation: clinic-background-zoom 7s ease-in-out infinite alternate;
+}
+
+@keyframes clinic-background-zoom {
+  from { transform: scale(1); }
+  to { transform: scale(1.08); }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .background { animation: none; }
+}
+
+@media (hover: none) and (pointer: coarse) {
+  .background { position: absolute; }
+}

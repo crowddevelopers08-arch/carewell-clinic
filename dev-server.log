@@ -1,0 +1,134 @@
+▲ Next.js 16.3.0 (Turbopack)
+- Local:         http://localhost:3000
+- Network:       http://192.168.0.11:3000
+- Environments: .env
+✓ Ready in 1388ms
+✓ Running next.config.ts took 48ms
+
+○ Compiling /treatment ...
+ GET /treatment 200 in 6.9s (next.js: 6.1s, application-code: 879ms)
+✓ Compiled in 1101ms
+ GET /treatment 200 in 385ms (next.js: 156ms, application-code: 229ms)
+ GET /treatment 200 in 175ms (next.js: 65ms, application-code: 110ms)
+✓ Compiled in 1327ms
+ GET /treatment 200 in 498ms (next.js: 282ms, application-code: 216ms)
+✓ Compiled in 360ms
+ GET /treatment 200 in 168ms (next.js: 81ms, application-code: 87ms)
+✓ Compiled in 1338ms
+ GET /treatment 200 in 659ms (next.js: 301ms, application-code: 358ms)
+ GET /treatment 200 in 650ms (next.js: 282ms, application-code: 368ms)
+ GET /treatment 200 in 151ms (next.js: 19ms, application-code: 132ms)
+✓ Compiled in 1250ms
+ GET /treatment 200 in 390ms (next.js: 190ms, application-code: 200ms)
+✓ Compiled in 727ms
+ GET /treatment 200 in 338ms (next.js: 131ms, application-code: 207ms)
+✓ Compiled in 1236ms
+✓ Compiled in 500ms
+ GET /treatment 200 in 1388ms (next.js: 770ms, application-code: 618ms)
+ GET /treatment 200 in 130ms (next.js: 24ms, application-code: 107ms)
+✓ Compiled in 1695ms
+ GET /treatment 200 in 400ms (next.js: 189ms, application-code: 211ms)
+✓ Compiled in 940ms
+✓ Compiled in 1515ms
+ GET /treatment 200 in 845ms (next.js: 510ms, application-code: 334ms)
+✓ Compiled in 194ms
+ GET /treatment 200 in 689ms (next.js: 378ms, application-code: 311ms)
+ GET /treatment 200 in 157ms (next.js: 16ms, application-code: 141ms)
+ GET /treatment 200 in 239ms (next.js: 12ms, application-code: 226ms)
+ GET /treatment 200 in 270ms (next.js: 18ms, application-code: 252ms)
+ GET /treatment 200 in 249ms (next.js: 12ms, application-code: 237ms)
+ GET /treatment 200 in 232ms (next.js: 13ms, application-code: 219ms)
+ GET /treatment 200 in 218ms (next.js: 7ms, application-code: 211ms)
+ GET /treatment 200 in 216ms (next.js: 9ms, application-code: 207ms)
+ GET /treatment 200 in 258ms (next.js: 10ms, application-code: 248ms)
+ GET /treatment 200 in 300ms (next.js: 11ms, application-code: 290ms)
+ GET /treatment 200 in 314ms (next.js: 12ms, application-code: 302ms)
+ GET /treatment 200 in 268ms (next.js: 29ms, application-code: 239ms)
+ GET /treatment 200 in 222ms (next.js: 11ms, application-code: 212ms)
+ GET /treatment 200 in 236ms (next.js: 15ms, application-code: 221ms)
+ GET /treatment 200 in 234ms (next.js: 14ms, application-code: 221ms)
+ GET /treatment 200 in 216ms (next.js: 20ms, application-code: 196ms)
+ GET /treatment 200 in 217ms (next.js: 7ms, application-code: 209ms)
+ GET /treatment 200 in 162ms (next.js: 10ms, application-code: 152ms)
+ GET /treatment 200 in 100ms (next.js: 9ms, application-code: 91ms)
+ GET /treatment 200 in 419ms (next.js: 39ms, application-code: 381ms)
+ GET /why-choose-us 200 in 954ms (next.js: 895ms, application-code: 59ms)
+ GET /why-choose-us 200 in 68ms (next.js: 5ms, application-code: 63ms)
+ GET /why-choose-us 200 in 79ms (next.js: 6ms, application-code: 73ms)
+ GET /treatment 200 in 176ms (next.js: 50ms, application-code: 126ms)
+ GET /treatment 200 in 79ms (next.js: 29ms, application-code: 50ms)
+ GET /treatment 200 in 734ms (next.js: 284ms, application-code: 450ms)
+ GET /treatment 200 in 287ms (next.js: 14ms, application-code: 274ms)
+ GET /treatment 200 in 254ms (next.js: 11ms, application-code: 243ms)
+ GET /treatment 200 in 286ms (next.js: 14ms, application-code: 271ms)
+ GET /treatment 200 in 323ms (next.js: 14ms, application-code: 309ms)
+ GET /treatment 200 in 232ms (next.js: 19ms, application-code: 213ms)
+ GET /treatment 200 in 186ms (next.js: 16ms, application-code: 171ms)
+ GET /treatment 200 in 145ms (next.js: 16ms, application-code: 129ms)
+ GET /treatment 200 in 144ms (next.js: 8ms, application-code: 136ms)
+ GET /treatment 200 in 217ms (next.js: 11ms, application-code: 206ms)
+ GET /treatment 200 in 211ms (next.js: 9ms, application-code: 201ms)
+ GET /treatment 200 in 224ms (next.js: 10ms, application-code: 214ms)
+ GET /treatment 200 in 210ms (next.js: 12ms, application-code: 198ms)
+ GET /treatment 200 in 210ms (next.js: 13ms, application-code: 196ms)
+ GET /treatment 200 in 210ms (next.js: 9ms, application-code: 201ms)
+ GET /treatment 200 in 206ms (next.js: 12ms, application-code: 194ms)
+ GET /treatment 200 in 205ms (next.js: 13ms, application-code: 193ms)
+ GET /treatment 200 in 133ms (next.js: 8ms, application-code: 125ms)
+ GET /treatment 200 in 75ms (next.js: 14ms, application-code: 61ms)
+✓ Compiled in 213ms
+ GET /treatment 200 in 232ms (next.js: 147ms, application-code: 85ms)
+ GET /treatment 200 in 82ms (next.js: 5ms, application-code: 77ms)
+ GET /treatment 200 in 226ms (next.js: 6ms, application-code: 221ms)
+ GET /treatment 200 in 238ms (next.js: 7ms, application-code: 231ms)
+ GET /treatment 200 in 240ms (next.js: 11ms, application-code: 229ms)
+ GET /treatment 200 in 170ms (next.js: 5ms, application-code: 165ms)
+ GET /treatment 200 in 167ms (next.js: 9ms, application-code: 158ms)
+ GET /treatment 200 in 155ms (next.js: 9ms, application-code: 146ms)
+ GET /treatment 200 in 181ms (next.js: 5ms, application-code: 176ms)
+ GET /treatment 200 in 199ms (next.js: 10ms, application-code: 190ms)
+ GET /treatment 200 in 202ms (next.js: 10ms, application-code: 192ms)
+ GET /treatment 200 in 176ms (next.js: 13ms, application-code: 163ms)
+ GET /treatment 200 in 143ms (next.js: 9ms, application-code: 135ms)
+ GET /treatment 200 in 122ms (next.js: 8ms, application-code: 114ms)
+ GET /treatment 200 in 112ms (next.js: 9ms, application-code: 103ms)
+ GET /treatment 200 in 75ms (next.js: 5ms, application-code: 69ms)
+ GET /treatment 200 in 40ms (next.js: 6ms, application-code: 34ms)
+ GET /treatment 200 in 83ms (next.js: 29ms, application-code: 55ms)
+ GET /treatment 200 in 85ms (next.js: 30ms, application-code: 55ms)
+ GET /treatment 200 in 551ms (next.js: 11ms, application-code: 539ms)
+✓ Compiled in 227ms
+ GET /treatment 200 in 69ms (next.js: 20ms, application-code: 50ms)
+✓ Compiled in 217ms
+ GET /treatment 200 in 127ms (next.js: 23ms, application-code: 104ms)
+✓ Compiled in 93ms
+ GET /treatment 200 in 551ms (next.js: 187ms, application-code: 364ms)
+ GET /treatment 200 in 295ms (next.js: 24ms, application-code: 271ms)
+ GET /treatment 200 in 225ms (next.js: 12ms, application-code: 213ms)
+ GET /treatment 200 in 192ms (next.js: 10ms, application-code: 183ms)
+ GET /treatment 200 in 127ms (next.js: 17ms, application-code: 110ms)
+ GET /treatment 200 in 135ms (next.js: 7ms, application-code: 127ms)
+ GET /treatment 200 in 207ms (next.js: 12ms, application-code: 195ms)
+ GET /treatment 200 in 210ms (next.js: 9ms, application-code: 201ms)
+ GET /treatment 200 in 398ms (next.js: 8ms, application-code: 390ms)
+ GET /treatment 200 in 434ms (next.js: 14ms, application-code: 420ms)
+ GET /treatment 200 in 412ms (next.js: 59ms, application-code: 353ms)
+ GET /treatment 200 in 203ms (next.js: 12ms, application-code: 190ms)
+ GET /treatment 200 in 159ms (next.js: 10ms, application-code: 149ms)
+ GET /treatment 200 in 197ms (next.js: 8ms, application-code: 189ms)
+ GET /treatment 200 in 232ms (next.js: 7ms, application-code: 226ms)
+ GET /treatment 200 in 185ms (next.js: 9ms, application-code: 176ms)
+ GET /treatment 200 in 92ms (next.js: 11ms, application-code: 81ms)
+✓ Compiled in 199ms
+ GET /treatment 200 in 70ms (next.js: 24ms, application-code: 45ms)
+✓ Compiled in 180ms
+ GET /treatment 200 in 75ms (next.js: 20ms, application-code: 55ms)
+✓ Compiled in 92ms
+ GET /treatment 200 in 43ms (next.js: 13ms, application-code: 29ms)
+✓ Compiled in 157ms
+ GET /treatment 200 in 80ms (next.js: 27ms, application-code: 54ms)
+ GET /treatment 200 in 346ms (next.js: 6ms, application-code: 340ms)
+ GET /why-choose-us 200 in 108ms (next.js: 25ms, application-code: 83ms)
+ GET /treatment 200 in 96ms (next.js: 7ms, application-code: 89ms)
+ GET /treatment 200 in 80ms (next.js: 5ms, application-code: 75ms)
+[?25h

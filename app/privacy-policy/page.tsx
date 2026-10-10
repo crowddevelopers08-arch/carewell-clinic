@@ -62,8 +62,8 @@ export default function PrivacyPolicyPage() {
         >
           {/* eslint-disable-next-line @next/next/no-img-element */}
           <img
-            className="h-12 w-auto mix-blend-multiply sm:h-20"
-            src="https://res.cloudinary.com/x6ec5hqm/image/upload/v1787231072/logos.webp"
+            className="h-12 w-auto sm:h-20"
+            src="/lp-logos.webp"
             alt="Carewell Clinic and Acadamy — Skin, Hair, Laser"
           />
         </Link>

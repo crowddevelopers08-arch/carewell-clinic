@@ -1,0 +1,25 @@
+.section { overflow: clip; }
+
+.section[data-visible="true"] .reveal {
+  animation: roadmap-enter 1100ms cubic-bezier(.22, 1, .36, 1) var(--delay, 0ms) both;
+}
+
+.section[data-visible="true"] .road {
+  stroke-dasharray: 1;
+  animation: roadmap-draw 2200ms ease-out both;
+}
+
+@keyframes roadmap-enter {
+  from { opacity: 0; transform: translateY(10px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes roadmap-draw {
+  from { stroke-dashoffset: 1; }
+  to { stroke-dashoffset: 0; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .section[data-visible="true"] .reveal,
+  .section[data-visible="true"] .road { animation: none; }
+}

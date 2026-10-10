@@ -1,0 +1,12 @@
+.wave {
+  animation: treatment-wave 14s linear infinite;
+}
+
+@keyframes treatment-wave {
+  from { transform: translateX(0); }
+  to { transform: translateX(-50%); }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .wave { animation: none; }
+}

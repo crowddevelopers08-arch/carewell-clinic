@@ -19,8 +19,7 @@ const cormorant = Cormorant_Garamond({
 const RATINGS = ['Terrible', 'Poor', 'Okay', 'Good', 'Excellent'];
 const EMOJIS = ['😞', '😟', '😐', '😊', '🤩'];
 
-const LOGO_SRC =
-  'https://res.cloudinary.com/x6ec5hqm/image/upload/v1787231072/logos.webp';
+const LOGO_SRC = '/lp-logos.webp';
 
 // Carewell Clinic and Acadamy — Google Business listing (CID from the map embed
 // in components/ContactMapSection.tsx). Replace with the short
@@ -114,12 +113,10 @@ export default function ReviewPage() {
             alt="Carewell Clinic and Acadamy — Skin, Hair, Laser"
             fill
             sizes="256px"
-            className="object-contain object-center mix-blend-multiply"
+            className="object-contain object-center"
             priority
           />
         </div>
-
-        <div className="w-10 h-px bg-[#c6a03b]/50" />
 
         {/* ── SCREEN 1: Star rating ── */}
         {!submitted && (
