@@ -2,8 +2,7 @@ import Link from "next/link";
 import type { Metadata } from "next";
 import { Cormorant_Garamond, Inter } from "next/font/google";
 import { ArrowLeft, Phone } from "lucide-react";
-import Footer from "@/components/Footer";
-import Script from "next/script";
+import Footer from "@/components/lhrtreatment/Footer";
 
 const inter = Inter({
   subsets: ["latin"],
@@ -45,53 +44,41 @@ export default function ThankYouPage() {
   return (
     <>
       {/* Google Ads Conversion Tracking - Fires when this page loads */}
-      <Script
-        id="google-ads-conversion"
-        strategy="afterInteractive"
-        dangerouslySetInnerHTML={{
-          __html: `
-            gtag('event', 'conversion', {
-              'send_to': 'AW-18400739132/_HkCCKrpquUcELz-k8ZE'
-            });
-          `,
-        }}
-      />
 
       <main className={`${inter.className} min-h-screen overflow-hidden bg-[#f7f5f1] text-[#171717]`}>
         {/* NAV */}
-        <nav className="flex items-center justify-around gap-4 border-b border-[#171717]/8 bg-[#f7f5f1] px-4 py-4 sm:px-6 sm:py-5 lg:px-14">
-          <Link
-            href="/"
-            aria-label="Carewell Clinic and Acadamy"
-            className="flex shrink-0 items-center"
+      <nav className="flex items-center justify-around gap-4 border-b border-[#171717]/8 px-6 py-4 sm:px-10 lg:px-14">
+        <Link
+          href="/treatment"
+          aria-label="Carewell Clinic and Acadamy"
+          className="flex shrink-0 items-center"
+        >
+          {/* eslint-disable-next-line @next/next/no-img-element */}
+          <img
+            className="h-9 w-auto sm:h-11"
+            src="/lp-logos.webp"
+            alt="Carewell Clinic and Acadamy — Skin, Hair, Laser"
+          />
+        </Link>
+
+        <div className="flex items-center gap-3 sm:gap-6">
+          <a
+            href="tel:+918291932733"
+            className="hidden items-center gap-2 text-[14px] font-medium text-[#171717] transition-colors hover:text-[#dd7900] sm:inline-flex"
           >
-            {/* eslint-disable-next-line @next/next/no-img-element */}
-            <img
-              className="h-11 w-auto sm:h-14 lg:h-26"
-              src="/lp-logos.webp"
-              alt="Carewell Clinic and Acadamy — Skin, Hair, Laser"
-            />
+            <Phone size={16} className="text-[#c6a03b]" />
+            +91 8691895355
+          </a>
+
+          <Link
+            href="/treatment"
+            className="inline-flex shrink-0 items-center gap-2 rounded-full bg-[#171717] px-4 py-2.5 text-[13px] font-medium tracking-[0.03em] !text-white transition-colors hover:bg-[#dd7900] hover:!text-white"
+          >
+            <ArrowLeft size={15} />
+            Back to Home
           </Link>
-
-          <div className="flex items-center gap-3 sm:gap-6">
-            <a
-              href="tel:+918291932733"
-              className="hidden items-center gap-2 text-[14px] font-medium text-[#171717] transition-colors hover:text-[#dd7900] md:inline-flex"
-            >
-              <Phone size={16} className="text-[#c6a03b]" />
-              +91 82919 32733
-            </a>
-
-            <Link
-              href="/"
-              className="inline-flex shrink-0 items-center gap-2 rounded-full bg-[#171717] px-3.5 py-2.5 text-[12.5px] font-medium tracking-[0.03em] !text-white hover:bg-[#dd7900] hover:!text-white sm:px-4 sm:py-3 sm:text-[13px]"
-            >
-              <ArrowLeft size={15} />
-              <span className="hidden sm:inline">Back to Home</span>
-              <span className="sm:hidden">Home</span>
-            </Link>
-          </div>
-        </nav>
+        </div>
+      </nav>
 
         <section className="relative isolate overflow-hidden px-4 py-8 sm:px-6 sm:py-10 lg:px-8 lg:py-12">
           <div
@@ -203,7 +190,7 @@ export default function ThankYouPage() {
               </div>
 
               <Link
-                href="/"
+                href="/treatment"
                 className="mt-5 inline-flex text-sm font-semibold text-[#c6a03b] underline-offset-4 hover:text-[#dd7900] hover:underline"
               >
                 ← Return to homepage

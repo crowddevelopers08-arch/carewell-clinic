@@ -43,13 +43,13 @@ export default function ContactMapSection({
       const response = await fetch("/api/submissions", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ source: "LHR Contact Form", name, phone, concern, pageUrl: window.location.href, rating: "", callback: "" }),
+        body: JSON.stringify({ source: "lhr treatment", formName: "lhr-treatment-leads", name, phone, concern, pageUrl: window.location.href, rating: "", callback: "" }),
       });
       const result = await response.json().catch(() => null);
       if (!response.ok || result?.success !== true) {
         throw new Error(result?.error || "We couldn't submit your request. Please try again.");
       }
-      router.push(`/thank-you?name=${encodeURIComponent(name)}`);
+      router.push(`/treatment/thank-you?name=${encodeURIComponent(name)}`);
     } catch (cause) {
       setError(cause instanceof Error ? cause.message : "We couldn't submit your request. Please try again.");
     } finally {

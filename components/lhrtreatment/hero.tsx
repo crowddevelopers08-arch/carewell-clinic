@@ -129,11 +129,9 @@ export default function Hero() {
                     key={label}
                     href={link.href}
                     onClick={() => setMenuOpen(false)}
-                    className={`rounded-xl px-3 py-2.5 text-[15px] font-medium transition-colors hover:bg-white/10 ${
-                      active ? "text-[#c6a03b]" : "text-white"
-                    }`}
+                    className="rounded-xl px-3 py-2.5 text-[15px] font-medium transition-colors hover:bg-white/10"
                   >
-                    {label}
+                    <span className={active ? "text-[#c6a03b]" : "text-white"}>{label}</span>
                   </a>
                 ),
               )}

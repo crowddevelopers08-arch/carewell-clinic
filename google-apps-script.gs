@@ -7,10 +7,11 @@
  *  (app/api/submissions/route.ts  ->  pushToSheet()) and writes ONE row.
  *
  *  ROUTING:
- *    - Booking / consultation leads  ->  "Submissions" tab   (unchanged)
- *    - Review-funnel leads (/review) ->  "Reviews" tab        (NEW, separate)
+ *    - Booking / consultation leads      ->  "Submissions" tab
+ *    - Review-funnel leads (/review)     ->  "Reviews" tab
+ *    - Treatment-page contact form leads ->  "LHR Treatments" tab
  *
- *  Review leads are written ONLY to "Reviews". They never touch "Submissions".
+ *  Each type is written ONLY to its own tab — never to "Submissions" as well.
  *
  *  ------------------------------------------------------------------------
  *  HOW TO INSTALL (one time — takes ~1 minute):
@@ -18,9 +19,9 @@
  *  1. Open the Google Sheet ("Carewell-Clinic").
  *  2. Menu:  Extensions  ->  Apps Script.
  *  3. Delete everything in the editor, paste THIS ENTIRE FILE, press Ctrl+S.
- *  4. (Optional test) In the toolbar function dropdown choose "setupReviewsTab"
- *     and click Run. A new empty "Reviews" tab with headers appears. This
- *     proves the script is valid.
+ *  4. (Optional test) In the toolbar function dropdown choose "setupAllTabs"
+ *     and click Run. Empty "Reviews" and "LHR Treatments" tabs (with headers)
+ *     appear if they don't already exist. This proves the script is valid.
  *  5. Deploy the change so the website starts using it:
  *        Deploy  ->  Manage deployments
  *        -> click the pencil (edit) on the existing "Web app" deployment
@@ -30,16 +31,14 @@
  *
  *  IMPORTANT: editing the code is not enough — step 5 (New version) is what
  *  makes the live website use the new code.
- *
- *  The 2 review rows already sitting in "Submissions" can be cut & pasted
- *  into the "Reviews" tab by hand.
  * ============================================================================
  */
 
 // ---- Tab names -------------------------------------------------------------
 // Must match the tab your booking leads already land on. Yours is "Submissions".
-var LEADS_TAB   = 'Submissions';
-var REVIEWS_TAB = 'Reviews';
+var LEADS_TAB         = 'Submissions';
+var REVIEWS_TAB       = 'Reviews';
+var LHR_TREATMENTS_TAB = 'LHR Treatments';
 
 // ---- Column layouts ------------------------------------------------------
 var LEADS_HEADERS = [
@@ -50,7 +49,12 @@ var REVIEWS_HEADERS = [
   'Timestamp', 'Source', 'Name', 'Phone', 'Rating', 'Callback', 'Message', 'URL', 'TeleCRM'
 ];
 
+var LHR_TREATMENTS_HEADERS = [
+  'Timestamp', 'Source', 'Name', 'Phone', 'Concern', 'URL', 'TeleCRM'
+];
+
 var REVIEW_SOURCE = 'Review Page';
+var LHR_TREATMENT_SOURCE = 'lhr treatment';
 
 // ==========================================================================
 //  Web app entry points
@@ -70,6 +74,12 @@ function doPost(e) {
       return jsonOut_({ success: true, tab: REVIEWS_TAB });
     }
 
+    if (isLhrTreatment_(data)) {
+      var lhrTreatments = getSheet_(LHR_TREATMENTS_TAB, LHR_TREATMENTS_HEADERS);
+      lhrTreatments.appendRow(lhrTreatmentRow_(data));
+      return jsonOut_({ success: true, tab: LHR_TREATMENTS_TAB });
+    }
+
     var leads = getSheet_(LEADS_TAB, LEADS_HEADERS);
     leads.appendRow(leadRow_(data));
     return jsonOut_({ success: true, tab: LEADS_TAB });
@@ -82,17 +92,18 @@ function doPost(e) {
 function doGet() {
   return jsonOut_({
     status: 'ok',
-    message: 'Carewell webhook live. Leads -> "' + LEADS_TAB + '", reviews -> "' + REVIEWS_TAB + '".'
+    message: 'Carewell webhook live. Leads -> "' + LEADS_TAB + '", reviews -> "' + REVIEWS_TAB + '", LHR treatment leads -> "' + LHR_TREATMENTS_TAB + '".'
   });
 }
 
 // ==========================================================================
-//  Manual helper — run once from the editor to create the Reviews tab now
+//  Manual helper — run once from the editor to create all tabs now
 // ==========================================================================
 
-function setupReviewsTab() {
-  getSheet_(REVIEWS_TAB, REVIEWS_HEADERS);
+function setupAllTabs() {
   getSheet_(LEADS_TAB, LEADS_HEADERS);
+  getSheet_(REVIEWS_TAB, REVIEWS_HEADERS);
+  getSheet_(LHR_TREATMENTS_TAB, LHR_TREATMENTS_HEADERS);
 }
 
 // ==========================================================================
@@ -102,6 +113,11 @@ function setupReviewsTab() {
 function isReview_(data) {
   if (data.isReview === true) return true;
   return String(data.source || '').toLowerCase() === REVIEW_SOURCE.toLowerCase();
+}
+
+function isLhrTreatment_(data) {
+  if (data.isLhrTreatment === true) return true;
+  return String(data.source || '').toLowerCase() === LHR_TREATMENT_SOURCE.toLowerCase();
 }
 
 function getSheet_(name, headers) {
@@ -136,6 +152,21 @@ function reviewRow_(data) {
     data.rating || '',
     data.callback || '',
     reviewMessage_(data),
+    data.pageUrl || data.url || '',
+    data.telecrm || ''
+  ];
+}
+
+function lhrTreatmentRow_(data) {
+  if (Object.prototype.toString.call(data.lhrTreatmentRow) === '[object Array]' && data.lhrTreatmentRow.length) {
+    return data.lhrTreatmentRow;
+  }
+  return [
+    data.timestamp || new Date().toISOString(),
+    data.source || LHR_TREATMENT_SOURCE,
+    data.name || '',
+    data.phone || '',
+    data.concern || '',
     data.pageUrl || data.url || '',
     data.telecrm || ''
   ];

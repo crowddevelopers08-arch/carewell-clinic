@@ -10,6 +10,7 @@ import LhrFaq from "@/components/lhrtreatment/faq";
 import FinalCta from "@/components/lhrtreatment/finalCta";
 import Footer from "@/components/lhrtreatment/Footer";
 import ContactMapSection from "@/components/lhrtreatment/ContactMapSection";
+import { MobileActionBar } from "@/components/lhrtreatment/MobileActionBar";
 
 export const metadata: Metadata = {
   title: "Treatment",
@@ -29,7 +30,7 @@ export default function TreatmentPage() {
       <FinalCta />
       <ContactMapSection />
       <Footer />
-
+      <MobileActionBar />
     </main>
   );
 }

@@ -1,4 +1,4 @@
-import { NextRequest, NextResponse } from 'next/server';
+import { NextRequest, NextResponse, after } from 'next/server';
 import * as fs from 'fs';
 import * as path from 'path';
 
@@ -18,6 +18,7 @@ export const runtime = 'nodejs';
 
 type SubmissionBody = {
   source: string;
+  formName: string;
   name: string;
   phone: string;
   concern: string;
@@ -38,8 +39,10 @@ function toText(value: unknown): string {
 }
 
 function normalizeSubmission(body: Record<string, unknown>): SubmissionBody {
+  const source = toText(body.source) || 'Carewell-Clinic-leads';
   return {
-    source: toText(body.source) || 'Carewell-Clinic-leads',
+    source,
+    formName: toText(body.formName) || source,
     name: toText(body.name),
     phone: toText(body.phone),
     concern: toText(body.concern),
@@ -50,6 +53,10 @@ function normalizeSubmission(body: Record<string, unknown>): SubmissionBody {
 }
 
 const REVIEW_SOURCE = 'Review Page';
+
+// Treatment-page contact form (components/lhrtreatment/ContactMapSection.tsx) —
+// lands on its own "LHR Treatments" tab, same column shape as the main leads tab.
+const LHR_TREATMENT_SOURCE = 'lhr treatment';
 
 // Column shape for the separate "review leads" tab in the Google Sheet.
 const REVIEW_HEADERS = [
@@ -107,6 +114,7 @@ async function pushToSheet(body: SubmissionBody, timestamp: string, telecrmStatu
   if (!url) return null;
 
   const isReview = body.source === REVIEW_SOURCE;
+  const isLhrTreatment = body.source === LHR_TREATMENT_SOURCE;
 
   const row = [
     timestamp,
@@ -131,12 +139,25 @@ async function pushToSheet(body: SubmissionBody, timestamp: string, telecrmStatu
     telecrmStatus,
   ];
 
+  // LHR treatment-page leads land on their own "LHR Treatments" tab — same
+  // column shape as the main leads tab.
+  const lhrTreatmentRow = [
+    timestamp,
+    body.source,
+    body.name,
+    body.phone,
+    body.concern,
+    body.pageUrl,
+    telecrmStatus,
+  ];
+
   const res = await fetch(url, {
     method: 'POST',
     headers: { 'Content-Type': 'text/plain;charset=utf-8' },
     body: JSON.stringify({
       timestamp,
       source: body.source,
+      formName: body.formName,
       name: body.name,
       phone: body.phone,
       concern: body.concern,
@@ -147,10 +168,13 @@ async function pushToSheet(body: SubmissionBody, timestamp: string, telecrmStatu
       rating: body.rating,
       callback: body.callback,
       isReview,
+      isLhrTreatment,
       headers: HEADERS,
       reviewHeaders: REVIEW_HEADERS,
+      lhrTreatmentHeaders: HEADERS,
       row,
       reviewRow,
+      lhrTreatmentRow,
     }),
   });
 
@@ -203,8 +227,10 @@ async function pushToTeleCRM(body: SubmissionBody): Promise<TelecrmResponse | nu
   const ratingText = body.rating ? `${body.rating}/5` : 'Not specified';
   const callbackText = body.callback || 'Not specified';
 
+  const formName = body.formName || body.source || 'Website';
+
   const details = [
-    `Form Name: ${body.source || 'Website'}`,
+    `Form Name: ${formName}`,
     `Name: ${body.name || 'Not specified'}`,
     `Phone: ${body.phone || 'Not specified'}`,
     ...(isReview
@@ -218,7 +244,7 @@ async function pushToTeleCRM(body: SubmissionBody): Promise<TelecrmResponse | nu
     fields,
     actions: [
       { type: 'SYSTEM_NOTE', text: `Details: ${details}` },
-      { type: 'SYSTEM_NOTE', text: `Form Name: ${body.source || 'Website'}` },
+      { type: 'SYSTEM_NOTE', text: `Form Name: ${formName}` },
       { type: 'SYSTEM_NOTE', text: `Name: ${body.name || 'Not specified'}` },
       { type: 'SYSTEM_NOTE', text: `Phone: ${body.phone || 'Not specified'}` },
       ...(isReview
@@ -310,40 +336,38 @@ export async function POST(req: NextRequest) {
     }
 
     const timestamp = new Date().toLocaleString('en-IN', { timeZone: 'Asia/Kolkata' });
-    const telecrmResult = await pushToTeleCRM(body);
-    const telecrmStatus = getTelecrmStatus(telecrmResult);
-    const row = [
-      timestamp,
-      body.source,
-      body.name,
-      body.phone,
-      body.concern,
-      body.pageUrl,
-      telecrmStatus,
-    ];
 
-    try {
-      appendLocalRow(row);
-    } catch (csvErr) {
-      console.warn('Local CSV save skipped:', (csvErr as Error).message);
-    }
+    // TeleCRM and the Google Sheet webhook are slow external calls (TeleCRM alone
+    // allows up to 15s). None of the UI reads their result, so respond to the
+    // browser immediately and do this sync work after the response is sent —
+    // the submit button no longer sits on "Submitting..." for several seconds.
+    after(async () => {
+      const telecrmResult = await pushToTeleCRM(body);
+      const telecrmStatus = getTelecrmStatus(telecrmResult);
+      const row = [
+        timestamp,
+        body.source,
+        body.name,
+        body.phone,
+        body.concern,
+        body.pageUrl,
+        telecrmStatus,
+      ];
 
-    let excelStatus = getSheetWebhookUrl() ? 'failed' : 'not_configured';
-    let excelError = '';
-    try {
-      const sheetResult = await pushToSheet(body, timestamp, telecrmStatus);
-      if (sheetResult !== null) excelStatus = 'synced';
-    } catch (gasErr) {
-      excelError = (gasErr as Error).message;
-      console.warn('Google Apps Script sync skipped:', excelError);
-    }
+      try {
+        appendLocalRow(row);
+      } catch (csvErr) {
+        console.warn('Local CSV save skipped:', (csvErr as Error).message);
+      }
 
-    return NextResponse.json({
-      success: true,
-      excel: excelStatus,
-      excelError,
-      telecrm: telecrmResult,
+      try {
+        await pushToSheet(body, timestamp, telecrmStatus);
+      } catch (gasErr) {
+        console.warn('Google Apps Script sync skipped:', (gasErr as Error).message);
+      }
     });
+
+    return NextResponse.json({ success: true });
   } catch (err) {
     console.error('Submission error:', err);
     return NextResponse.json({ success: false, error: 'Server error' }, { status: 500 });
