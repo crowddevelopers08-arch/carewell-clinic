@@ -60,7 +60,7 @@ export default function ContactMapSection({
   const mapSrc = `https://www.google.com/maps/embed?pb=!1m23!1m12!1m3!1d14776.86542977911!2d80.1540219!3d13.06632165!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!4m8!3e6!4m0!4m5!1s0x3be7c9247c2468c5%3A0xf36e253a5fc2bec3!2sCarewell%20Clinic%20and%20Acadamy%20%7C%20Dr.%20Dinesh%20Manjrekar%2C%201st%20Floor%2C%20Swaroop%20Aditya%20Avenue%20Building%2C%20A-107%2C%20Marol%20Pipeline%20Rd%2C%20Kanti%20Nagar%2C%20J%20B%20Nagar%2C%20Andheri%20East%2C%20Mumbai%2C%20Maharashtra%20400099!3m2!1d19.1050005!2d72.8672481!5e1!3m2!1sen!2sin!4v1786168574402!5m2!1sen!2sin`;
 
   return (
-    <section id="contact" className={`${inter.className} relative w-full scroll-mt-8 overflow-hidden bg-white px-4 py-16 sm:px-6 lg:px-8`}>
+    <section className={`${inter.className} relative w-full scroll-mt-8 overflow-hidden bg-white px-4 py-16 sm:px-6 lg:px-8`}>
       <div className="pointer-events-none absolute -right-24 -top-32 h-[420px] w-[420px] rounded-full bg-[#c6a03b]/[0.10] blur-3xl" />
       <div className="pointer-events-none absolute -bottom-28 -left-16 h-[360px] w-[360px] rounded-full bg-[#dd7900]/[0.08] blur-3xl" />
 
@@ -92,7 +92,7 @@ export default function ContactMapSection({
           />
         </div>
 
-        <div className="rounded-[24px] border border-[#c6a03b]/20 bg-white/95 p-5 shadow-[0_16px_50px_rgba(23,23,23,.06)] sm:p-7">
+        <div id="contact" className="rounded-[24px] border border-[#c6a03b]/20 bg-white/95 p-5 shadow-[0_16px_50px_rgba(23,23,23,.06)] sm:p-7">
           <span className="inline-flex w-fit items-center gap-2 bg-white py-2 text-[12px] font-medium uppercase tracking-[0.18em] text-[#927421] sm:text-[13px]">
             Contact Now
           </span>

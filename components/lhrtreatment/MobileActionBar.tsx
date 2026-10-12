@@ -1,10 +1,19 @@
 "use client";
 
+import { scrollToContact } from "./scrollToContact";
 
 const phoneNumber = "+91 8691895355";
 
-export function MobileActionBar() {
+function ConsultationCta({ onClick, className = "" }: { onClick: () => void; className?: string }) {
+  return (
+    <button type="button" onClick={onClick} className={`${className} flex h-12 cursor-pointer items-center justify-center gap-2 rounded-full bg-[#171717] text-[14px] font-extrabold text-white shadow-sm transition hover:bg-[#dd7900] active:scale-[0.98]`}>
+      Book Now
+      <ArrowIcon />
+    </button>
+  );
+}
 
+export function MobileActionBar() {
   return (
     <div className="fixed inset-x-0 bottom-1 z-50 rounded-full border-t border-[#c6a03b]/25 bg-white/95 p-1 shadow-[0_-6px_20px_rgba(23,23,23,0.14)] backdrop-blur lg:hidden">
       <div className="mx-auto grid max-w-[620px] grid-cols-2 gap-3">
@@ -15,13 +24,7 @@ export function MobileActionBar() {
           <PhoneIcon />
           Call Now
         </a>
-        <button
-          type="button"
-          className="flex h-12 cursor-pointer items-center justify-center gap-2 rounded-full bg-[#171717] text-[14px] font-extrabold text-white shadow-sm transition hover:bg-[#dd7900] active:scale-[0.98]"
-        >
-          Book Now
-          <ArrowIcon />
-        </button>
+        <ConsultationCta onClick={scrollToContact} />
       </div>
     </div>
   );
