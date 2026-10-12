@@ -183,7 +183,7 @@ export default function Hero() {
               onClick={scrollToContact}
               className="mt-6 inline-flex cursor-pointer items-center gap-2.5 rounded-full bg-[#c6a03b] py-2 pl-5 pr-2 text-[13px] font-medium tracking-[0.03em] shadow-sm transition-colors hover:bg-[#dd7900] sm:gap-3 sm:py-2.5 sm:pl-6 sm:pr-2.5 sm:text-sm lg:mt-8"
             >
-              <span className="text-white">Book Your LHR Consultation</span>
+              <span className="text-white">Talk to Our Team </span>
               <span className="inline-flex h-7 w-7 items-center justify-center rounded-full bg-white text-[#171717] sm:h-8 sm:w-8">
                 <ArrowUpRight className="h-3.5 w-3.5 sm:h-4 sm:w-4" strokeWidth={2.5} />
               </span>

@@ -196,7 +196,7 @@ export default function TestimonialsSection({ avatars = {}, ratings = {} }: Test
           <button
             type="button"
             onClick={scrollToContact}
-            className="inline-flex w-full cursor-pointer items-center justify-between gap-3 rounded-full bg-[#c6a03b] sm:w-auto py-2.5 pl-6 pr-2.5 text-[13px] font-medium tracking-[0.03em] text-white shadow-sm transition-colors hover:bg-[#dd7900] focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-[#c6a03b] sm:text-sm"
+            className="inline-flex cursor-pointer items-center justify-between gap-3 rounded-full bg-[#c6a03b] sm:w-auto py-2.5 pl-6 pr-2.5 text-[13px] font-medium tracking-[0.03em] text-white shadow-sm transition-colors hover:bg-[#dd7900] focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-[#c6a03b] sm:text-sm"
           >
             Start Your LHR Journey
             <span className="inline-flex h-8 w-8 items-center justify-center rounded-full bg-white text-[#171717]">

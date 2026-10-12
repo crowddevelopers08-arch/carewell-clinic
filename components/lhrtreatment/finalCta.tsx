@@ -8,8 +8,8 @@ import Reveal from "./Reveal";
 
 function ConsultationCta({ onClick, className }: { onClick: () => void; className: string }) {
   return (
-    <button type="button" onClick={onClick} className={`${className} inline-flex w-full cursor-pointer items-center justify-between gap-3 rounded-full bg-[#c6a03b] py-2.5 pl-6 pr-2.5 text-left text-[13px] font-medium text-white shadow-sm transition-colors hover:bg-[#dd7900] focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-[#c6a03b] sm:w-auto sm:text-sm`}>
-      Book Your Consultation Today
+    <button type="button" onClick={onClick} className={`${className} inline-flex cursor-pointer items-center justify-between gap-3 rounded-full bg-[#c6a03b] py-2.5 pl-6 pr-2.5 text-left text-[13px] font-medium text-white shadow-sm transition-colors hover:bg-[#dd7900] focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-[#c6a03b] sm:w-auto sm:text-sm`}>
+      Talk to Our Team 
       <span className="inline-flex h-8 w-8 shrink-0 items-center justify-center rounded-full bg-white text-[#171717]">
         <ArrowUpRight className="h-4 w-4" strokeWidth={2.5} aria-hidden="true" />
       </span>
