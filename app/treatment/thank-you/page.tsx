@@ -1,5 +1,6 @@
 import Link from "next/link";
 import type { Metadata } from "next";
+import Script from "next/script";
 import { Cormorant_Garamond, Inter } from "next/font/google";
 import { ArrowLeft, Phone } from "lucide-react";
 import Footer from "@/components/lhrtreatment/Footer";
@@ -43,7 +44,36 @@ const nextSteps = [
 export default function ThankYouPage() {
   return (
     <>
+      {/* Google Ads (gtag.js) - loaded here since this page can be reached
+          directly without having passed through app/page.tsx first. */}
+      <Script
+        strategy="afterInteractive"
+        src="https://www.googletagmanager.com/gtag/js?id=AW-18400739132"
+      />
+      <Script
+        id="google-ads-init"
+        strategy="afterInteractive"
+        dangerouslySetInnerHTML={{
+          __html: `
+            window.dataLayer = window.dataLayer || [];
+            function gtag(){dataLayer.push(arguments);}
+            gtag('js', new Date());
+            gtag('config', 'AW-18400739132');
+          `,
+        }}
+      />
+
       {/* Google Ads Conversion Tracking - Fires when this page loads */}
+      {/* Event snippet for Submit lead | Skin LP | 21/8 conversion page */}
+      <Script
+        id="google-ads-conversion"
+        strategy="afterInteractive"
+        dangerouslySetInnerHTML={{
+          __html: `
+            gtag('event', 'conversion', {'send_to': 'AW-18400739132/_HkCCKrpquUcELz-k8ZE'});
+          `,
+        }}
+      />
 
       <main className={`${inter.className} min-h-screen overflow-hidden bg-[#f7f5f1] text-[#171717]`}>
         {/* NAV */}
